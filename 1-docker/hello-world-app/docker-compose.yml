@@ -1,0 +1,7 @@
+version: '3'
+
+services:
+  kotlin-app:
+    build: .
+    volumes:
+      - .:/app
