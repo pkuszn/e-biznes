@@ -1,0 +1,23 @@
+// build.gradle
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.6.10'
+    id 'application'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib'
+    implementation 'org.xerial:sqlite-jdbc:3.36.0.3'
+}
+
+def mainClassName = 'HelloWorld'
+
+task runApplication(type: JavaExec) {
+    main = mainClassName
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+runApplication.dependsOn('build')
