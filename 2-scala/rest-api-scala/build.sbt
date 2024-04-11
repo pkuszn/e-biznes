@@ -1,11 +1,11 @@
-name := """scala-rest-api-product"""
+name := """rest-api-scala"""
 organization := "com.example"
 
 version := "1.0-SNAPSHOT"
 
 lazy val root = (project in file(".")).enablePlugins(PlayScala)
 
-scalaVersion := "2.12.19"
+scalaVersion := "2.13.13"
 
 libraryDependencies += guice
 libraryDependencies += "org.scalatestplus.play" %% "scalatestplus-play" % "7.0.0" % Test
