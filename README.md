@@ -17,6 +17,8 @@
 
 <b>Task no.2</b> <i>Scala Play</i>
 
+4.0 - [a08a4ff970a54973fb12fbdbf0fdcf76c14c7504](https://github.com/pkuszn/e-biznes/tree/a08a4ff970a54973fb12fbdbf0fdcf76c14c7504)
+
 ## 
 
 # Status
