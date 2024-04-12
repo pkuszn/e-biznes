@@ -9,13 +9,21 @@ GET     /                           controllers.HomeController.index()
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
 
-GET     /products                   controllers.ProductController.index()
-GET     /products/:id               controllers.ProductController.show(id: long)
+GET     /products                   controllers.ProductController.getAllProducts()
+GET     /products/:id               controllers.ProductController.getProductById(id: Long)
+POST    /product                    controllers.ProductController.addProduct()
+PUT     /product/:id                controllers.ProductController.updateProduct(id: Long)
+DELETE  /product/:id                controllers.ProductController.deleteProduct(id: Long)
+
+GET     /categories                 controllers.CategoryController.getAllCategories()
+GET     /category/:id               controllers.CategoryController.getCategoryById(id: Int)
+POST    /category                   controllers.CategoryController.addCategory()
+PUT     /category/:id               controllers.CategoryController.updateCategory(id: Int)
+DELETE  /category/:id               controllers.CategoryController.deleteCategory(id: Int)
 
 
-GET     /category                   controllers.CategoryController.index()
-GET     /category/:id               controllers.CategoryController.show(id: long)
-
-
-GET     /basket                     controllers.BasketController.index()
-GET     /basket/:id                 controllers.BasketController.show(id: long)
+GET     /purchases                  controllers.PurchaseController.getAllPurchases()
+GET     /purchase/:id               controllers.PurchaseController.getPurchaseById(id: Long)
+POST    /purchase                   controllers.PurchaseController.addPurchase()
+PUT     /purchase/:id               controllers.PurchaseController.updatePurchase(id: Long)
+DELETE  /purchase/:id               controllers.PurchaseController.deletePurchase(id: Long)

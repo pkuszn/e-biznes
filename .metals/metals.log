@@ -272,3 +272,674 @@ INFO: Unsupported notification method: $/setTrace
 Apr 11, 2024 9:46:42 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
 WARNING: Unmatched cancel notification for request id 142
 2024.04.11 21:47:09 WARN  no build tool detected in workspace '/home/pkuszneruk/university/e-biznes'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
+2024.04.11 21:51:18 INFO  Shutting down server[0m
+2024.04.11 21:51:18 INFO  shutting down Metals[0m
+2024.04.11 21:51:18 INFO  Exiting server[0m
+2024.04.12 19:36:44 INFO  Started: Metals version 1.2.2 in folders '/home/pkuszneruk/university/e-biznes' for client Visual Studio Code 1.88.1.[0m
+19:36:45.648 [pool-1-thread-1] INFO org.flywaydb.core.internal.license.VersionPrinter -- Flyway Community Edition 9.22.3 by Redgate
+19:36:45.651 [pool-1-thread-1] INFO org.flywaydb.core.internal.license.VersionPrinter -- See release notes here: https://rd.gt/416ObMi
+19:36:45.652 [pool-1-thread-1] INFO org.flywaydb.core.internal.license.VersionPrinter -- 
+19:36:45.655 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classpath resources at 'classpath:db/callback' ...
+19:36:45.655 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Determining location urls for classpath:db/callback using ClassLoader jdk.internal.loader.ClassLoaders$AppClassLoader@55054057 ...
+19:36:45.655 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Unable to resolve location classpath:db/callback.
+19:36:45.655 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classpath resources at 'classpath:db/migration' ...
+19:36:45.655 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Determining location urls for classpath:db/migration using ClassLoader jdk.internal.loader.ClassLoaders$AppClassLoader@55054057 ...
+19:36:45.656 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning URL: jar:file:/home/pkuszneruk/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scalameta/metals_2.13/1.2.2/metals_2.13-1.2.2.jar!/db/migration
+19:36:45.659 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/
+19:36:45.659 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V1__Create_tables.sql
+19:36:45.659 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V2__Server_discovery.sql
+19:36:45.660 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V3__Jar_symbols.sql
+19:36:45.660 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V4__Fingerprints.sql
+19:36:45.660 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classes at classpath:db/migration
+19:36:45.664 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+19:36:45.665 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V2__Server_discovery.sql
+19:36:45.665 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V1__Create_tables.sql
+19:36:45.666 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V3__Jar_symbols.sql
+19:36:45.666 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V4__Fingerprints.sql
+19:36:45.769 [pool-1-thread-1] INFO org.flywaydb.core.FlywayExecutor -- Database: jdbc:h2:file:/home/pkuszneruk/university/e-biznes/.metals/metals (H2 2.2)
+19:36:45.769 [pool-1-thread-1] DEBUG org.flywaydb.core.FlywayExecutor -- Driver: H2 JDBC Driver 2.2.224 (2023-09-17)
+19:36:45.769 [pool-1-thread-1] DEBUG org.flywaydb.core.FlywayExecutor -- DDL Transactions Supported: false
+19:36:45.770 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.schemahistory.SchemaHistoryFactory -- Schemas: 
+19:36:45.771 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.schemahistory.SchemaHistoryFactory -- Default schema: null
+19:36:45.780 [pool-1-thread-1] WARN org.flywaydb.core.internal.database.base.Database -- Flyway upgrade recommended: H2 2.2.224 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
+19:36:45.782 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.callback.SqlScriptCallbackFactory -- Scanning for SQL callbacks ...
+19:36:45.782 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+19:36:45.793 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.command.DbValidate -- Validating migrations ...
+19:36:45.798 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+19:36:45.810 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V2__Server_discovery.sql (filename: V2__Server_discovery.sql)
+19:36:45.811 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V1__Create_tables.sql (filename: V1__Create_tables.sql)
+19:36:45.811 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V3__Jar_symbols.sql (filename: V3__Jar_symbols.sql)
+19:36:45.811 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V4__Fingerprints.sql (filename: V4__Fingerprints.sql)
+19:36:45.811 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+19:36:45.812 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V2__Server_discovery.sql (filename: V2__Server_discovery.sql)
+19:36:45.813 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V1__Create_tables.sql (filename: V1__Create_tables.sql)
+19:36:45.813 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V3__Jar_symbols.sql (filename: V3__Jar_symbols.sql)
+19:36:45.813 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V4__Fingerprints.sql (filename: V4__Fingerprints.sql)
+19:36:45.813 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+19:36:45.831 [pool-1-thread-1] INFO org.flywaydb.core.internal.command.DbValidate -- Successfully validated 4 migrations (execution time 00:00.036s)
+19:36:45.833 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.command.DbSchemas -- Skipping creation of existing schema: "PUBLIC"
+19:36:45.845 [pool-1-thread-1] INFO org.flywaydb.core.internal.command.DbMigrate -- Current version of schema "PUBLIC": 4
+19:36:45.852 [pool-1-thread-1] INFO org.flywaydb.core.internal.command.DbMigrate -- Schema "PUBLIC" is up to date. No migration necessary.
+19:36:46.083 [pool-1-thread-1] DEBUG org.flywaydb.core.FlywayExecutor -- Memory usage: 47 of 102M
+2024.04.12 19:36:46 WARN  no build tool detected in workspace '/home/pkuszneruk/university/e-biznes'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
+2024.04.12 19:36:46 WARN  Build server is not auto-connectable.[0m
+2024.04.12 19:36:52 INFO  no build target found for /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/services/CategoryService.scala. Using presentation compiler with project's scala-library version: 3.3.1[0m
+2024.04.12 19:36:56 INFO  time: code lens generation in 9.41s[0m
+2024.04.12 19:37:07 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/HomeController.scala[0m
+2024.04.12 19:37:08 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/HomeController.scala[0m
+2024.04.12 19:37:11 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/HomeController.scala[0m
+2024.04.12 19:37:16 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
+2024.04.12 19:37:21 WARN  Using indexes to guess the definition of index[0m
+2024.04.12 19:42:03 INFO  Detected new build tool in /home/pkuszneruk/university/e-biznes[0m
+2024.04.12 19:42:03 WARN  no build tool detected in workspace '/home/pkuszneruk/university/e-biznes'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
+2024.04.12 19:42:03 WARN  Build server is not auto-connectable.[0m
+2024.04.12 19:43:56 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/build.sbt[0m
+2024.04.12 19:45:01 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/build.sbt[0m
+2024.04.12 19:45:44 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/build.sbt[0m
+2024.04.12 19:45:44 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/build.sbt[0m
+2024.04.12 19:47:28 WARN  Could not find semantic tokens for: file:///home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/project/plugins.sbt[0m
+2024.04.12 19:48:32 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/build.sbt[0m
+2024.04.12 19:48:38 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/build.sbt[0m
+2024.04.12 19:49:36 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/build.sbt[0m
+2024.04.12 19:49:56 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/build.sbt[0m
+2024.04.12 19:52:38 WARN  Using indexes to guess the definition of getAllCategories[0m
+Apr 12, 2024 7:52:41 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 324
+Apr 12, 2024 7:52:51 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 339
+Apr 12, 2024 7:53:14 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 356
+2024.04.12 19:53:14 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/services/CategoryService.scala[0m
+2024.04.12 19:53:21 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
+2024.04.12 19:54:39 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
+2024.04.12 19:54:39 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
+2024.04.12 19:55:00 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
+2024.04.12 19:55:09 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
+2024.04.12 19:55:26 ERROR Failed to tokenize input for semantic tokens for /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala
+scala.meta.tokenizers.TokenizeException: <input>:27: error: Invalid literal number
+    }, 5s)
+       ^
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.LegacyScanner.checkNoLetter(LegacyScanner.scala:820)
+	at scala.meta.internal.tokenizers.LegacyScanner.restOfUncertainToken$1(LegacyScanner.scala:864)
+	at scala.meta.internal.tokenizers.LegacyScanner.getNumber(LegacyScanner.scala:872)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchToken(LegacyScanner.scala:335)
+	at scala.meta.internal.tokenizers.LegacyScanner.nextToken(LegacyScanner.scala:211)
+	at scala.meta.internal.tokenizers.LegacyScanner.foreach(LegacyScanner.scala:1011)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.uncachedTokenize(ScalametaTokenizer.scala:24)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.$anonfun$tokenize$1(ScalametaTokenizer.scala:17)
+	at scala.collection.concurrent.TrieMap.getOrElseUpdate(TrieMap.scala:962)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.tokenize(ScalametaTokenizer.scala:17)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer$$anon$2.apply(ScalametaTokenizer.scala:332)
+	at scala.meta.tokenizers.Api$XtensionTokenizeDialectInput.tokenize(Api.scala:25)
+	at scala.meta.tokenizers.Api$XtensionTokenizeInputLike.tokenize(Api.scala:14)
+	at scala.meta.internal.metals.SemanticTokensProvider$.getTokens(SemanticTokensProvider.scala:28)
+	at scala.meta.internal.metals.SemanticTokensProvider$.provide(SemanticTokensProvider.scala:89)
+	at scala.meta.internal.metals.Compilers.$anonfun$semanticTokens$3(Compilers.scala:541)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.lang.Thread.run(Thread.java:829)
+[0m
+2024.04.12 19:55:27 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
+2024.04.12 19:55:28 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
+2024.04.12 19:56:45 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
+2024.04.12 19:56:46 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
+2024.04.12 19:57:27 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
+2024.04.12 20:03:12 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
+2024.04.12 20:03:18 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
+2024.04.12 20:03:20 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
+2024.04.12 20:03:20 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
+2024.04.12 20:03:58 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
+2024.04.12 20:04:03 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
+2024.04.12 20:04:13 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
+2024.04.12 20:04:14 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
+2024.04.12 20:04:52 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
+2024.04.12 20:04:53 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
+2024.04.12 20:04:54 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
+2024.04.12 20:04:54 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
+2024.04.12 20:05:29 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
+2024.04.12 20:05:30 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
+2024.04.12 20:05:32 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
+2024.04.12 20:05:41 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
+2024.04.12 20:05:43 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
+2024.04.12 20:05:52 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
+Apr 12, 2024 8:06:42 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1051
+2024.04.12 20:06:54 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
+2024.04.12 20:07:14 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
+2024.04.12 20:07:16 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
+Apr 12, 2024 8:07:18 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1165
+2024.04.12 20:07:25 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
+2024.04.12 20:07:33 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
+2024.04.12 20:07:35 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
+2024.04.12 20:07:35 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
+2024.04.12 20:08:35 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
+2024.04.12 20:08:47 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
+2024.04.12 20:09:29 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/models/ProductModel.scala[0m
+2024.04.12 20:09:34 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/models/PurchaseModel.scala[0m
+2024.04.12 20:09:44 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/models/PurchaseModel.scala[0m
+2024.04.12 20:09:46 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/models/ProductModel.scala[0m
+2024.04.12 20:09:52 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/models/ProductModel.scala[0m
+Apr 12, 2024 8:09:53 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1385
+Apr 12, 2024 8:09:54 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1399
+2024.04.12 20:09:56 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/models/PurchaseModel.scala[0m
+2024.04.12 20:10:23 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/models/PurchaseModel.scala[0m
+2024.04.12 20:10:25 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/models/PurchaseModel.scala[0m
+2024.04.12 20:10:44 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/models/ProductModel.scala[0m
+2024.04.12 20:10:47 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/models/ProductModel.scala[0m
+2024.04.12 20:10:48 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/models/ProductModel.scala[0m
+2024.04.12 20:11:24 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/models/ProductModel.scala[0m
+Apr 12, 2024 8:11:26 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1559
+2024.04.12 20:11:29 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/models/PurchaseModel.scala[0m
+2024.04.12 20:11:30 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/models/PurchaseModel.scala[0m
+2024.04.12 20:11:47 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/models/PurchaseModel.scala[0m
+2024.04.12 20:11:48 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/models/PurchaseModel.scala[0m
+2024.04.12 20:11:51 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/models/ProductModel.scala[0m
+2024.04.12 20:11:51 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/models/ProductModel.scala[0m
+2024.04.12 20:11:52 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/models/ProductModel.scala[0m
+2024.04.12 20:12:45 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/build.sbt[0m
+2024.04.12 20:12:46 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/build.sbt[0m
+Apr 12, 2024 8:13:39 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1717
+2024.04.12 20:13:42 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/services/CategoryService.scala[0m
+2024.04.12 20:13:45 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/services/CategoryService.scala[0m
+2024.04.12 20:13:47 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/services/CategoryService.scala[0m
+2024.04.12 20:14:30 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/services/CategoryService.scala[0m
+2024.04.12 20:15:03 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/services/CategoryService.scala[0m
+2024.04.12 20:15:35 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/build.sbt[0m
+2024.04.12 20:15:39 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/build.sbt[0m
+Apr 12, 2024 8:15:52 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1905
+2024.04.12 20:15:52 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/build.sbt[0m
+2024.04.12 20:15:53 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/build.sbt[0m
+2024.04.12 20:31:47 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/build.sbt[0m
+2024.04.12 20:36:12 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/services/CategoryService.scala[0m
+2024.04.12 20:36:13 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/services/CategoryService.scala[0m
+2024.04.12 20:36:17 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/services/CategoryService.scala[0m
+2024.04.12 20:39:50 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/build.sbt[0m
+2024.04.12 20:41:02 WARN  Could not find semantic tokens for: file:///home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/project/plugins.sbt[0m
+2024.04.12 20:41:04 WARN  Could not find semantic tokens for: file:///home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/project/plugins.sbt[0m
+2024.04.12 20:41:05 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/project/plugins.sbt[0m
+2024.04.12 20:41:04 WARN  Could not find semantic tokens for: file:///home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/project/plugins.sbt[0m
+2024.04.12 20:41:08 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/project/plugins.sbt[0m
+2024.04.12 20:41:08 WARN  Could not find semantic tokens for: file:///home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/project/plugins.sbt[0m
+2024.04.12 20:41:13 WARN  Could not find semantic tokens for: file:///home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/project/plugins.sbt[0m
+2024.04.12 20:41:13 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/project/plugins.sbt[0m
+2024.04.12 20:41:13 WARN  Could not find semantic tokens for: file:///home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/project/plugins.sbt[0m
+2024.04.12 20:45:41 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/build.sbt[0m
+2024.04.12 20:46:55 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/build.sbt[0m
+2024.04.12 20:46:55 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/build.sbt[0m
+2024.04.12 20:48:30 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/services/CategoryService.scala[0m
+2024.04.12 20:48:42 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/services/CategoryService.scala[0m
+2024.04.12 20:48:53 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/services/CategoryService.scala[0m
+2024.04.12 20:48:54 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/services/CategoryService.scala[0m
+2024.04.12 20:49:33 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/services/CategoryService.scala[0m
+2024.04.12 20:50:42 WARN  Using indexes to guess the definition of id[0m
+2024.04.12 20:50:42 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/services/CategoryService.scala[0m
+2024.04.12 20:50:49 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/services/CategoryService.scala[0m
+Apr 12, 2024 8:51:57 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+2024.04.12 20:52:06 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/services/CategoryService.scala[0m
+2024.04.12 20:52:09 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/services/CategoryService.scala[0m
+Apr 12, 2024 8:52:10 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+Apr 12, 2024 8:52:10 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+Apr 12, 2024 8:52:12 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2360
+2024.04.12 20:52:12 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/services/CategoryService.scala[0m
+Apr 12, 2024 8:52:12 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2363
+2024.04.12 20:52:20 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/services/CategoryService.scala[0m
+2024.04.12 20:52:26 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/services/CategoryService.scala[0m
+2024.04.12 20:52:43 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/services/CategoryService.scala[0m
+2024.04.12 20:52:44 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/services/CategoryService.scala[0m
+2024.04.12 20:53:58 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/services/CategoryService.scala[0m
+2024.04.12 20:54:10 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/services/CategoryService.scala[0m
+2024.04.12 20:54:11 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/services/CategoryService.scala[0m
+2024.04.12 20:54:11 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/services/CategoryService.scala[0m
+2024.04.12 20:55:40 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/services/CategoryService.scala[0m
+Apr 12, 2024 8:55:47 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2505
+2024.04.12 20:55:48 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/services/CategoryService.scala[0m
+2024.04.12 20:56:06 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/services/CategoryService.scala[0m
+2024.04.12 20:56:08 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/services/CategoryService.scala[0m
+2024.04.12 20:56:12 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/services/CategoryService.scala[0m
+2024.04.12 20:56:15 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/services/CategoryService.scala[0m
+2024.04.12 20:56:23 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/services/CategoryService.scala[0m
+2024.04.12 20:56:25 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/services/CategoryService.scala[0m
+2024.04.12 20:56:32 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/services/CategoryService.scala[0m
+2024.04.12 20:57:02 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/services/CategoryService.scala[0m
+2024.04.12 20:57:03 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/services/CategoryService.scala[0m
+2024.04.12 20:57:31 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/services/CategoryService.scala[0m
+2024.04.12 20:57:35 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/services/CategoryService.scala[0m
+2024.04.12 20:57:38 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/services/CategoryService.scala[0m
+2024.04.12 20:58:08 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/services/CategoryService.scala[0m
+2024.04.12 20:58:31 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/services/CategoryService.scala[0m
+2024.04.12 20:58:32 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/services/CategoryService.scala[0m
+2024.04.12 20:58:43 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/services/CategoryService.scala[0m
+2024.04.12 20:58:43 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/services/CategoryService.scala[0m
+2024.04.12 20:58:43 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/services/CategoryService.scala[0m
+2024.04.12 20:58:43 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/services/CategoryService.scala[0m
+2024.04.12 20:58:43 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/services/CategoryService.scala[0m
+2024.04.12 20:58:55 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/services/CategoryService.scala[0m
+2024.04.12 20:59:35 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/services/CategoryService.scala[0m
+2024.04.12 21:00:08 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/services/CategoryService.scala[0m
+Apr 12, 2024 9:01:04 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2924
+2024.04.12 21:01:06 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/services/CategoryService.scala[0m
+2024.04.12 21:01:07 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/services/CategoryService.scala[0m
+2024.04.12 21:01:09 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/services/CategoryService.scala[0m
+2024.04.12 21:01:10 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/services/CategoryService.scala[0m
+2024.04.12 21:01:11 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/services/CategoryService.scala[0m
+2024.04.12 21:01:13 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/services/CategoryService.scala[0m
+2024.04.12 21:01:41 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/services/CategoryService.scala[0m
+2024.04.12 21:01:52 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/services/CategoryService.scala[0m
+2024.04.12 21:02:18 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/services/CategoryService.scala[0m
+2024.04.12 21:02:19 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/services/CategoryService.scala[0m
+2024.04.12 21:03:13 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/build.sbt[0m
+2024.04.12 21:03:47 WARN  Could not find semantic tokens for: file:///home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/project/plugins.sbt[0m
+Apr 12, 2024 9:03:52 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+2024.04.12 21:03:54 WARN  Could not find semantic tokens for: file:///home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/project/plugins.sbt[0m
+Apr 12, 2024 9:03:57 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 3124
+Apr 12, 2024 9:03:57 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 3125
+2024.04.12 21:03:57 WARN  Could not find semantic tokens for: file:///home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/project/plugins.sbt[0m
+2024.04.12 21:04:12 WARN  Could not find semantic tokens for: file:///home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/project/plugins.sbt[0m
+2024.04.12 21:04:12 WARN  Could not find semantic tokens for: file:///home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/project/plugins.sbt[0m
+2024.04.12 21:04:13 WARN  Could not find semantic tokens for: file:///home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/project/plugins.sbt[0m
+2024.04.12 21:05:26 WARN  Could not find semantic tokens for: file:///home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/project/plugins.sbt[0m
+2024.04.12 21:06:19 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/StorageConf.scala[0m
+2024.04.12 21:06:46 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/StorageConf.scala[0m
+2024.04.12 21:06:47 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/StorageConf.scala[0m
+2024.04.12 21:06:59 WARN  Could not find semantic tokens for: file:///home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/project/plugins.sbt[0m
+Apr 12, 2024 9:06:59 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 3219
+2024.04.12 21:07:05 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/build.sbt[0m
+2024.04.12 21:07:15 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/build.sbt[0m
+2024.04.12 21:07:20 ERROR Failed to tokenize input for semantic tokens for /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/build.sbt
+scala.meta.tokenizers.TokenizeException: <input>:14: error: unclosed string literal
+	"com.typesafe.slick%% "slick-hikaricp"                 % "3.3.2",
+                                                                ^
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.LegacyScanner.getStringLit(LegacyScanner.scala:553)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchDoubleQuote$1(LegacyScanner.scala:372)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchToken(LegacyScanner.scala:376)
+	at scala.meta.internal.tokenizers.LegacyScanner.nextToken(LegacyScanner.scala:211)
+	at scala.meta.internal.tokenizers.LegacyScanner.foreach(LegacyScanner.scala:1011)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.uncachedTokenize(ScalametaTokenizer.scala:24)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.$anonfun$tokenize$1(ScalametaTokenizer.scala:17)
+	at scala.collection.concurrent.TrieMap.getOrElseUpdate(TrieMap.scala:962)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.tokenize(ScalametaTokenizer.scala:17)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer$$anon$2.apply(ScalametaTokenizer.scala:332)
+	at scala.meta.tokenizers.Api$XtensionTokenizeDialectInput.tokenize(Api.scala:25)
+	at scala.meta.tokenizers.Api$XtensionTokenizeInputLike.tokenize(Api.scala:14)
+	at scala.meta.internal.metals.SemanticTokensProvider$.getTokens(SemanticTokensProvider.scala:28)
+	at scala.meta.internal.metals.SemanticTokensProvider$.provide(SemanticTokensProvider.scala:89)
+	at scala.meta.internal.metals.Compilers.$anonfun$semanticTokens$3(Compilers.scala:541)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.lang.Thread.run(Thread.java:829)
+[0m
+2024.04.12 21:07:27 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/build.sbt[0m
+2024.04.12 21:07:29 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/build.sbt[0m
+2024.04.12 21:07:32 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/build.sbt[0m
+2024.04.12 21:07:41 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/build.sbt[0m
+2024.04.12 21:08:17 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/build.sbt[0m
+2024.04.12 21:10:10 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
+2024.04.12 21:10:11 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
+2024.04.12 21:10:41 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
+2024.04.12 21:10:43 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
+2024.04.12 21:10:46 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
+2024.04.12 21:11:24 WARN  Using indexes to guess the definition of category[0m
+2024.04.12 21:11:26 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
+2024.04.12 21:11:26 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
+2024.04.12 21:11:26 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
+2024.04.12 21:11:36 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
+2024.04.12 21:11:39 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
+2024.04.12 21:11:40 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
+Apr 12, 2024 9:12:47 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 3602
+Apr 12, 2024 9:12:47 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 3603
+2024.04.12 21:12:48 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
+2024.04.12 21:13:46 WARN  Using indexes to guess the definition of categories[0m
+2024.04.12 21:13:46 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
+2024.04.12 21:14:46 INFO  Shutting down server[0m
+2024.04.12 21:14:46 INFO  shutting down Metals[0m
+2024.04.12 21:14:46 INFO  Exiting server[0m
+2024.04.12 21:20:35 INFO  Started: Metals version 1.2.2 in folders '/home/pkuszneruk/university/e-biznes' for client Visual Studio Code 1.88.1.[0m
+21:20:36.846 [pool-1-thread-1] INFO org.flywaydb.core.internal.license.VersionPrinter -- Flyway Community Edition 9.22.3 by Redgate
+21:20:36.850 [pool-1-thread-1] INFO org.flywaydb.core.internal.license.VersionPrinter -- See release notes here: https://rd.gt/416ObMi
+21:20:36.850 [pool-1-thread-1] INFO org.flywaydb.core.internal.license.VersionPrinter -- 
+21:20:36.853 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classpath resources at 'classpath:db/callback' ...
+21:20:36.854 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Determining location urls for classpath:db/callback using ClassLoader jdk.internal.loader.ClassLoaders$AppClassLoader@55054057 ...
+21:20:36.854 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Unable to resolve location classpath:db/callback.
+21:20:36.854 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classpath resources at 'classpath:db/migration' ...
+21:20:36.854 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Determining location urls for classpath:db/migration using ClassLoader jdk.internal.loader.ClassLoaders$AppClassLoader@55054057 ...
+21:20:36.855 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning URL: jar:file:/home/pkuszneruk/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scalameta/metals_2.13/1.2.2/metals_2.13-1.2.2.jar!/db/migration
+21:20:36.859 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/
+21:20:36.859 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V1__Create_tables.sql
+21:20:36.860 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V2__Server_discovery.sql
+21:20:36.860 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V3__Jar_symbols.sql
+21:20:36.860 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V4__Fingerprints.sql
+21:20:36.860 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classes at classpath:db/migration
+21:20:36.867 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+21:20:36.867 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V2__Server_discovery.sql
+21:20:36.868 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V1__Create_tables.sql
+21:20:36.869 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V3__Jar_symbols.sql
+21:20:36.869 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V4__Fingerprints.sql
+21:20:37.009 [pool-1-thread-1] INFO org.flywaydb.core.FlywayExecutor -- Database: jdbc:h2:file:/home/pkuszneruk/university/e-biznes/.metals/metals (H2 2.2)
+21:20:37.009 [pool-1-thread-1] DEBUG org.flywaydb.core.FlywayExecutor -- Driver: H2 JDBC Driver 2.2.224 (2023-09-17)
+21:20:37.009 [pool-1-thread-1] DEBUG org.flywaydb.core.FlywayExecutor -- DDL Transactions Supported: false
+21:20:37.011 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.schemahistory.SchemaHistoryFactory -- Schemas: 
+21:20:37.011 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.schemahistory.SchemaHistoryFactory -- Default schema: null
+21:20:37.020 [pool-1-thread-1] WARN org.flywaydb.core.internal.database.base.Database -- Flyway upgrade recommended: H2 2.2.224 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
+21:20:37.021 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.callback.SqlScriptCallbackFactory -- Scanning for SQL callbacks ...
+21:20:37.022 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+21:20:37.037 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.command.DbValidate -- Validating migrations ...
+21:20:37.045 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+21:20:37.066 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V2__Server_discovery.sql (filename: V2__Server_discovery.sql)
+21:20:37.067 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V1__Create_tables.sql (filename: V1__Create_tables.sql)
+21:20:37.067 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V3__Jar_symbols.sql (filename: V3__Jar_symbols.sql)
+21:20:37.067 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V4__Fingerprints.sql (filename: V4__Fingerprints.sql)
+21:20:37.067 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+21:20:37.069 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V2__Server_discovery.sql (filename: V2__Server_discovery.sql)
+21:20:37.069 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V1__Create_tables.sql (filename: V1__Create_tables.sql)
+21:20:37.069 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V3__Jar_symbols.sql (filename: V3__Jar_symbols.sql)
+21:20:37.069 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V4__Fingerprints.sql (filename: V4__Fingerprints.sql)
+21:20:37.069 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+21:20:37.093 [pool-1-thread-1] INFO org.flywaydb.core.internal.command.DbValidate -- Successfully validated 4 migrations (execution time 00:00.054s)
+21:20:37.098 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.command.DbSchemas -- Skipping creation of existing schema: "PUBLIC"
+21:20:37.115 [pool-1-thread-1] INFO org.flywaydb.core.internal.command.DbMigrate -- Current version of schema "PUBLIC": 4
+21:20:37.122 [pool-1-thread-1] INFO org.flywaydb.core.internal.command.DbMigrate -- Schema "PUBLIC" is up to date. No migration necessary.
+21:20:37.160 [pool-1-thread-1] DEBUG org.flywaydb.core.FlywayExecutor -- Memory usage: 46 of 102M
+2024.04.12 21:20:37 WARN  no build tool detected in workspace '/home/pkuszneruk/university/e-biznes'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
+2024.04.12 21:20:37 WARN  Build server is not auto-connectable.[0m
+2024.04.12 21:20:44 INFO  no build target found for /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala. Using presentation compiler with project's scala-library version: 3.3.1[0m
+2024.04.12 21:20:47 INFO  time: code lens generation in 9.47s[0m
+Apr 12, 2024 9:21:23 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 35
+2024.04.12 21:21:26 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/ProductController.scala[0m
+Apr 12, 2024 9:21:26 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint fallbackResponseError
+SEVERE: Internal error: java.lang.UnsupportedOperationException: tail of empty list
+java.util.concurrent.CompletionException: java.lang.UnsupportedOperationException: tail of empty list
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:331)
+	at java.base/java.util.concurrent.CompletableFuture.uniAcceptNow(CompletableFuture.java:743)
+	at java.base/java.util.concurrent.CompletableFuture.uniAcceptStage(CompletableFuture.java:731)
+	at java.base/java.util.concurrent.CompletableFuture.thenAccept(CompletableFuture.java:2114)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleRequest(RemoteEndpoint.java:279)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:190)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.lang.UnsupportedOperationException: tail of empty list
+	at scala.collection.immutable.Nil$.tail(List.scala:664)
+	at scala.collection.immutable.Nil$.tail(List.scala:661)
+	at scala.meta.internal.metals.codeactions.CreateCompanionObjectCodeAction.$anonfun$endPosOfTree$1(CreateCompanionObjectCodeAction.scala:77)
+	at scala.Option.flatMap(Option.scala:283)
+	at scala.meta.internal.metals.codeactions.CreateCompanionObjectCodeAction.endPosOfTree(CreateCompanionObjectCodeAction.scala:75)
+	at scala.meta.internal.metals.codeactions.CreateCompanionObjectCodeAction.$anonfun$contribute$5(CreateCompanionObjectCodeAction.scala:61)
+	at scala.Option.map(Option.scala:242)
+	at scala.meta.internal.metals.codeactions.CreateCompanionObjectCodeAction.$anonfun$contribute$4(CreateCompanionObjectCodeAction.scala:58)
+	at scala.Option$WithFilter.flatMap(Option.scala:283)
+	at scala.meta.internal.metals.codeactions.CreateCompanionObjectCodeAction.$anonfun$contribute$2(CreateCompanionObjectCodeAction.scala:56)
+	at scala.Option.flatMap(Option.scala:283)
+	at scala.meta.internal.metals.codeactions.CreateCompanionObjectCodeAction.$anonfun$contribute$1(CreateCompanionObjectCodeAction.scala:55)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:687)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	... 3 more
+
+2024.04.12 21:21:29 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/ProductController.scala[0m
+2024.04.12 21:21:59 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/PurchaseController.scala[0m
+2024.04.12 21:22:04 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/PurchaseController.scala[0m
+Apr 12, 2024 9:22:08 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 138
+Apr 12, 2024 9:22:14 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 166
+2024.04.12 21:22:15 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/ProductController.scala[0m
+Apr 12, 2024 9:22:16 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 180
+2024.04.12 21:22:17 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/PurchaseController.scala[0m
+2024.04.12 21:22:18 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/PurchaseController.scala[0m
+Apr 12, 2024 9:22:19 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 205
+Apr 12, 2024 9:22:19 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 211
+2024.04.12 21:22:31 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/ProductController.scala[0m
+2024.04.12 21:22:36 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/ProductController.scala[0m
+2024.04.12 21:22:39 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/ProductController.scala[0m
+2024.04.12 21:22:42 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/ProductController.scala[0m
+2024.04.12 21:22:42 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/ProductController.scala[0m
+Apr 12, 2024 9:22:42 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 320
+2024.04.12 21:22:47 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/ProductController.scala[0m
+2024.04.12 21:22:48 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/ProductController.scala[0m
+2024.04.12 21:22:48 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/ProductController.scala[0m
+2024.04.12 21:22:49 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/ProductController.scala[0m
+2024.04.12 21:22:52 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/ProductController.scala[0m
+Apr 12, 2024 9:22:52 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 363
+Apr 12, 2024 9:22:53 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 373
+2024.04.12 21:22:54 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/ProductController.scala[0m
+2024.04.12 21:22:57 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/ProductController.scala[0m
+2024.04.12 21:23:00 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/ProductController.scala[0m
+2024.04.12 21:23:00 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/ProductController.scala[0m
+Apr 12, 2024 9:23:05 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 423
+2024.04.12 21:23:16 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/PurchaseController.scala[0m
+2024.04.12 21:23:21 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/PurchaseController.scala[0m
+2024.04.12 21:23:23 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/PurchaseController.scala[0m
+2024.04.12 21:23:24 WARN  Using indexes to guess the definition of products[0m
+2024.04.12 21:23:29 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/PurchaseController.scala[0m
+2024.04.12 21:23:30 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/PurchaseController.scala[0m
+Apr 12, 2024 9:23:49 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 614
+2024.04.12 21:23:57 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/ProductController.scala[0m
+Apr 12, 2024 9:23:58 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 656
+2024.04.12 21:24:03 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/PurchaseController.scala[0m
+2024.04.12 21:24:13 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
+2024.04.12 21:24:16 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/ProductController.scala[0m
+Apr 12, 2024 9:24:18 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 730
+Apr 12, 2024 9:24:19 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 739
+Apr 12, 2024 9:24:19 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 740
+2024.04.12 21:24:19 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/PurchaseController.scala[0m
+Apr 12, 2024 9:24:27 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 749
+Apr 12, 2024 9:24:27 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 750
+Apr 12, 2024 9:24:27 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 751
+Apr 12, 2024 9:24:27 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 752
+Apr 12, 2024 9:24:27 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 753
+Apr 12, 2024 9:24:27 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 754
+Apr 12, 2024 9:24:27 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 755
+Apr 12, 2024 9:24:27 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 756
+Apr 12, 2024 9:24:27 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 757
+2024.04.12 21:24:29 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
+2024.04.12 21:24:36 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/PurchaseController.scala[0m
+2024.04.12 21:24:41 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/ProductController.scala[0m
+2024.04.12 21:24:50 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/ProductController.scala[0m
+Apr 12, 2024 9:24:51 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 870
+2024.04.12 21:24:54 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/ProductController.scala[0m
+2024.04.12 21:24:59 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/PurchaseController.scala[0m
+2024.04.12 21:25:02 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/PurchaseController.scala[0m
+2024.04.12 21:25:03 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/PurchaseController.scala[0m
+2024.04.12 21:25:14 WARN  Using indexes to guess the definition of purchases[0m
+2024.04.12 21:25:22 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/PurchaseController.scala[0m
+2024.04.12 21:25:22 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/PurchaseController.scala[0m
+Apr 12, 2024 9:25:24 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 964
+2024.04.12 21:27:52 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/ProductController.scala[0m
+2024.04.12 21:28:01 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/ProductController.scala[0m
+2024.04.12 21:28:02 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/ProductController.scala[0m
+2024.04.12 21:28:03 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/ProductController.scala[0m
+2024.04.12 21:29:34 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/ProductController.scala[0m
+2024.04.12 21:30:05 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/ProductController.scala[0m
+2024.04.12 21:30:09 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/ProductController.scala[0m
+2024.04.12 21:30:38 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/ProductController.scala[0m
+2024.04.12 21:30:43 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/ProductController.scala[0m
+2024.04.12 21:30:53 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/ProductController.scala[0m
+2024.04.12 21:31:03 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/ProductController.scala[0m
+2024.04.12 21:31:16 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/ProductController.scala[0m
+2024.04.12 21:31:21 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/ProductController.scala[0m
+Apr 12, 2024 9:33:16 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1194
+2024.04.12 21:33:18 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/ProductController.scala[0m
+2024.04.12 21:33:23 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/ProductController.scala[0m
+2024.04.12 21:33:23 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/ProductController.scala[0m
+2024.04.12 21:35:38 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/ProductController.scala[0m
+2024.04.12 21:35:42 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/ProductController.scala[0m
+2024.04.12 21:35:54 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/ProductController.scala[0m
+2024.04.12 21:36:15 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/ProductController.scala[0m
+2024.04.12 21:36:17 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/ProductController.scala[0m
+2024.04.12 21:36:52 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/ProductController.scala[0m
+2024.04.12 21:37:31 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/ProductController.scala[0m
+2024.04.12 21:37:35 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/ProductController.scala[0m
+2024.04.12 21:37:36 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/ProductController.scala[0m
+Apr 12, 2024 9:39:33 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1388
+Apr 12, 2024 9:39:33 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1389
+2024.04.12 21:39:37 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/PurchaseController.scala[0m
+Apr 12, 2024 9:39:45 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1428
+2024.04.12 21:39:49 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
+2024.04.12 21:39:49 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
+2024.04.12 21:39:53 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
+2024.04.12 21:39:59 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
+Apr 12, 2024 9:41:09 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1538
+Apr 12, 2024 9:41:11 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1530
+2024.04.12 21:41:11 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
+Apr 12, 2024 9:41:11 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1545
+2024.04.12 21:41:11 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
+2024.04.12 21:41:19 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
+2024.04.12 21:41:30 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
+2024.04.12 21:41:39 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
+2024.04.12 21:41:39 WARN  Using indexes to guess the definition of products[0m
+2024.04.12 21:41:48 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
+2024.04.12 21:41:50 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
+2024.04.12 21:41:51 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
+2024.04.12 21:41:54 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
+2024.04.12 21:41:55 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
+2024.04.12 21:41:55 WARN  Using indexes to guess the definition of products[0m
+2024.04.12 21:41:57 WARN  Using indexes to guess the definition of products[0m
+2024.04.12 21:41:57 WARN  Using indexes to guess the definition of products[0m
+2024.04.12 21:41:58 WARN  Using indexes to guess the definition of categories[0m
+Apr 12, 2024 9:41:58 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1761
+2024.04.12 21:41:58 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
+2024.04.12 21:42:00 WARN  Using indexes to guess the definition of categories[0m
+2024.04.12 21:42:01 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
+2024.04.12 21:42:14 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
+2024.04.12 21:42:16 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
+2024.04.12 21:42:19 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
+2024.04.12 21:42:21 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
+2024.04.12 21:42:24 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
+Apr 12, 2024 9:42:31 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1898
+Apr 12, 2024 9:42:33 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1905
+2024.04.12 21:42:38 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
+2024.04.12 21:42:41 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
+Apr 12, 2024 9:42:56 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1972
+2024.04.12 21:42:59 WARN  Using indexes to guess the definition of products[0m
+Apr 12, 2024 9:42:59 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1981
+2024.04.12 21:43:03 WARN  Using indexes to guess the definition of products[0m
+2024.04.12 21:43:03 WARN  Using indexes to guess the definition of categories[0m
+2024.04.12 21:43:03 WARN  Using indexes to guess the definition of categories[0m
+2024.04.12 21:43:08 WARN  Using indexes to guess the definition of products[0m
+2024.04.12 21:43:08 WARN  Using indexes to guess the definition of products[0m
+2024.04.12 21:43:09 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
+2024.04.12 21:43:11 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
+2024.04.12 21:43:24 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
+2024.04.12 21:43:24 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
+2024.04.12 21:43:27 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
+Apr 12, 2024 9:43:35 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2137
+Apr 12, 2024 9:43:35 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2138
+2024.04.12 21:43:42 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/PurchaseController.scala[0m
+Apr 12, 2024 9:43:43 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2207
+Apr 12, 2024 9:43:44 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2213
+2024.04.12 21:43:45 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
+2024.04.12 21:43:50 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/PurchaseController.scala[0m
+Apr 12, 2024 9:43:52 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2273
+2024.04.12 21:43:54 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/PurchaseController.scala[0m
+2024.04.12 21:43:57 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/PurchaseController.scala[0m
+2024.04.12 21:43:59 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/PurchaseController.scala[0m
+2024.04.12 21:44:03 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/PurchaseController.scala[0m
+2024.04.12 21:44:06 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/PurchaseController.scala[0m
+2024.04.12 21:44:08 WARN  Using indexes to guess the definition of products[0m
+2024.04.12 21:44:13 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/PurchaseController.scala[0m
+Apr 12, 2024 9:44:17 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2407
+2024.04.12 21:44:28 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/PurchaseController.scala[0m
+2024.04.12 21:44:30 WARN  Using indexes to guess the definition of products[0m
+2024.04.12 21:44:44 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/PurchaseController.scala[0m
+2024.04.12 21:44:48 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/PurchaseController.scala[0m
+2024.04.12 21:44:59 WARN  Using indexes to guess the definition of products[0m
+2024.04.12 21:44:59 WARN  Using indexes to guess the definition of products[0m
+2024.04.12 21:45:07 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/PurchaseController.scala[0m
+Apr 12, 2024 9:45:12 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2687
+2024.04.12 21:45:14 WARN  Using indexes to guess the definition of products[0m
+2024.04.12 21:45:21 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/PurchaseController.scala[0m
+Apr 12, 2024 9:45:26 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2751
+2024.04.12 21:45:28 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/PurchaseController.scala[0m
+2024.04.12 21:45:35 WARN  Using indexes to guess the definition of products[0m
+2024.04.12 21:45:35 WARN  Using indexes to guess the definition of products[0m
+2024.04.12 21:45:35 WARN  Using indexes to guess the definition of products[0m
+2024.04.12 21:45:35 WARN  Using indexes to guess the definition of purchases[0m
+2024.04.12 21:45:36 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/PurchaseController.scala[0m
+Apr 12, 2024 9:45:38 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2792
+2024.04.12 21:45:40 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/PurchaseController.scala[0m
+2024.04.12 21:45:40 WARN  Using indexes to guess the definition of purchases[0m
+Apr 12, 2024 9:45:41 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2797
+2024.04.12 21:45:44 WARN  no build target for: /home/pkuszneruk/university/e-biznes/2-scala/rest-api-scala/app/controllers/CategoryController.scala[0m
