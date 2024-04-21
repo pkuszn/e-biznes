@@ -1,7 +1,6 @@
 package handlers
 
 import (
-	"errors"
 	"go-rest-api/dtos"
 	"go-rest-api/models"
 	"go-rest-api/repository"
@@ -24,11 +23,6 @@ func (h *PurchaseHandler) CreatePurchase(c echo.Context) error {
 	if err := c.Bind(purchase); err != nil {
 		log.Error(err.Error())
 		return err
-	}
-
-	if err := validatePurchase(purchase); err != nil {
-		log.Error(err.Error())
-		return c.JSON(http.StatusBadRequest, err.Error())
 	}
 
 	if err := h.Repo.CreatePurchase(purchase); err != nil {
@@ -98,32 +92,5 @@ func (h *PurchaseHandler) DeletePurchase(c echo.Context) error {
 	}
 
 	return c.NoContent(http.StatusNoContent)
-
-}
-
-func validatePurchase(purchase *dtos.Purchase) error {
-	if purchase.IdProduct > 0 {
-		return errors.New("idProduct must be greater than 0")
-	}
-	if purchase.IdUser > 0 {
-		return errors.New("idUser must be greater than 0")
-	}
-	if purchase.Price > 0 {
-		return errors.New("price must be greater than 0")
-	}
-	if purchase.Quantity > 0 {
-		return errors.New("quantity must be greater than 0")
-	}
-	if purchase.PurchaseDate == "" {
-		return errors.New("purchaseDate is required")
-	}
-	if purchase.DeliveryType > 0 {
-		return errors.New("deliveryType must be greater than 0")
-	}
-	if purchase.PaymentType > 0 {
-		return errors.New("paymentType must be greater than 0")
-	}
-
-	return nil
 
 }

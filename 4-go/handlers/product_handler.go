@@ -1,7 +1,6 @@
 package handlers
 
 import (
-	"errors"
 	"go-rest-api/dtos"
 	"go-rest-api/models"
 	"go-rest-api/repository"
@@ -26,10 +25,7 @@ func (h *ProductHandler) CreateProduct(c echo.Context) error {
 		return err
 	}
 
-	if err := validateProduct(product); err != nil {
-		log.Error(err.Error())
-		return c.JSON(http.StatusBadRequest, err.Error())
-	}
+	log.Info(product)
 
 	if err := h.Repo.CreateProduct(product); err != nil {
 		log.Error("Failed to create the product. ", err.Error())
@@ -98,20 +94,4 @@ func (h *ProductHandler) DeleteProduct(c echo.Context) error {
 	}
 
 	return c.NoContent(http.StatusNoContent)
-}
-
-func validateProduct(product *dtos.Product) error {
-	if product.Name == "" {
-		return errors.New("name is required")
-	}
-	if product.Category > 0 {
-		return errors.New("category must be greater than 0")
-	}
-	if product.Price > 0 {
-		return errors.New("price must be greater than 0")
-	}
-	if product.CreatedDate == "" {
-		return errors.New("createdDate is required")
-	}
-	return nil
 }

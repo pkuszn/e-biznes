@@ -13,9 +13,9 @@ func SetupRoutes(g *echo.Group) {
 	productHandler := handlers.NewProductHandler(productRepo)
 
 	productGroup := g.Group("/product")
-	productGroup.GET("/", productHandler.GetProduct)
+	productGroup.GET("", productHandler.GetProduct)
 	productGroup.GET("/:id", productHandler.GetProductById)
-	productGroup.POST("/", productHandler.CreateProduct)
+	productGroup.POST("", productHandler.CreateProduct)
 	productGroup.PUT("/:id", productHandler.UpdateProduct)
 	productGroup.DELETE("/:id", productHandler.DeleteProduct)
 

@@ -16,7 +16,15 @@ func NewGormProductRepository(db *gorm.DB) *GormProductRepository {
 }
 
 func (r *GormProductRepository) CreateProduct(product *dtos.Product) error {
-	return r.DB.Create(product).Error
+	newProduct := models.Product{
+		ID:          product.ID,
+		Name:        product.Name,
+		Category:    product.Category,
+		Price:       product.Price,
+		CreatedDate: product.CreatedDate,
+		Available:   product.Available,
+	}
+	return r.DB.Create(&newProduct).Error
 }
 
 func (r *GormProductRepository) GetAllProducts() ([]models.Product, error) {

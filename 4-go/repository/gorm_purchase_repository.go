@@ -16,7 +16,17 @@ func NewGormPurchaseRepository(db *gorm.DB) *GormPurchaseRepository {
 }
 
 func (r *GormPurchaseRepository) CreatePurchase(purchase *dtos.Purchase) error {
-	return r.DB.Create(purchase).Error
+	newPurchase := models.Purchase{
+		ID:           purchase.ID,
+		IdProduct:    purchase.IdProduct,
+		IdUser:       purchase.IdUser,
+		Price:        purchase.Price,
+		Quantity:     purchase.Quantity,
+		PurchaseDate: purchase.PurchaseDate,
+		DeliveryType: purchase.DeliveryType,
+		PaymentType:  purchase.PaymentType,
+	}
+	return r.DB.Create(&newPurchase).Error
 }
 
 func (r *GormPurchaseRepository) GetAllPurchases() ([]models.Purchase, error) {

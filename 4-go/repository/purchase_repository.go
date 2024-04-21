@@ -8,7 +8,7 @@ import (
 type PurchaseRepository interface {
 	GetAllPurchases() ([]models.Purchase, error)
 	GetPurchaseById(id uint) (*models.Purchase, error)
-	CreatePurchase(book *dtos.Purchase) error
-	UpdatePurchase(id uint, book *dtos.Purchase) (*models.Purchase, error)
+	CreatePurchase(purchase *dtos.Purchase) error
+	UpdatePurchase(id uint, purchase *dtos.Purchase) (*models.Purchase, error)
 	DeletePurchase(id uint) error
 }

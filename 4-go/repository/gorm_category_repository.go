@@ -16,7 +16,11 @@ func NewGormCategoryRepository(db *gorm.DB) *GormCategoryRepository {
 }
 
 func (r *GormCategoryRepository) CreateCategory(category *dtos.Category) error {
-	return r.DB.Create(category).Error
+	newCategory := models.Category{
+		ID:   category.ID,
+		Name: category.Name,
+	}
+	return r.DB.Create(&newCategory).Error
 }
 
 func (r *GormCategoryRepository) GetAllCategories() ([]models.Category, error) {
