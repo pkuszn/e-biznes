@@ -24,6 +24,8 @@
 
 <b>Task no.4</b> <i>Go</i>
 
+4.0 - [3e0ce03c2717bc7c4a38a813d172ad95d1854321](https://github.com/pkuszn/e-biznes/tree/3e0ce03c2717bc7c4a38a813d172ad95d1854321)
+
 ## 
 
 # Status
@@ -33,4 +35,4 @@
 | 1 | Docker | :white_check_mark: |
 | 2 | Scala Play | :white_check_mark: |
 | 3 | Kotlin | :soon: |
-| 4 | Go | :soon: |
+| 4 | Go | :white_check_mark: |
