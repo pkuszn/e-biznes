@@ -1,7 +1,6 @@
 package handlers
 
 import (
-	"errors"
 	"go-rest-api/dtos"
 	"go-rest-api/models"
 	"go-rest-api/repository"
@@ -27,12 +26,8 @@ func (h *CategoryHandler) CreateCategory(c echo.Context) error {
 		return err
 	}
 
-	if err := validateCategory(category); err != nil {
-		log.Error(err.Error())
-		return c.JSON(http.StatusBadRequest, err.Error())
-	}
-
 	if err := h.Repo.CreateCategory(category); err != nil {
+		log.Info(category)
 		log.Error("Failed to create the category. ", err.Error())
 		return c.JSON(http.StatusInternalServerError, "Failed to create the category.")
 	}
@@ -101,13 +96,6 @@ func (h *CategoryHandler) DeleteCategory(c echo.Context) error {
 	}
 
 	return c.NoContent(http.StatusNoContent)
-}
-
-func validateCategory(category *dtos.Category) error {
-	if category.Name == "" {
-		return errors.New("category name is required")
-	}
-	return nil
 }
 
 func getIntId(c echo.Context) (uint, error) {

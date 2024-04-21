@@ -1,6 +1,6 @@
 package dtos
 
 type Category struct {
-	ID   int64  `gorm:"primaryKey" json:"id"`
+	ID   int64  `json:"id"`
 	Name string `json:"name"`
 }

@@ -8,7 +8,7 @@ import (
 type ProductRepository interface {
 	GetAllProducts() ([]models.Product, error)
 	GetProductById(id uint) (*models.Product, error)
-	CreateProduct(book *dtos.Product) error
-	UpdateProduct(id uint, book *dtos.Product) (*models.Product, error)
+	CreateProduct(product *dtos.Product) error
+	UpdateProduct(id uint, product *dtos.Product) (*models.Product, error)
 	DeleteProduct(id uint) error
 }

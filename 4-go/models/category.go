@@ -7,3 +7,7 @@ type Category struct {
 	ID   int64  `gorm:"primaryKey" json:"id"`
 	Name string `json:"name"`
 }
+
+func (Category) TableName() string {
+	return "category"
+}
