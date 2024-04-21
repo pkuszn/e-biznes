@@ -19,11 +19,20 @@
 
 4.0 - [a08a4ff970a54973fb12fbdbf0fdcf76c14c7504](https://github.com/pkuszn/e-biznes/tree/a08a4ff970a54973fb12fbdbf0fdcf76c14c7504)
 
+<b>Task no.3</b> <i>Kotlin</i>
+
+
+<b>Task no.4</b> <i>Go</i>
+
+4.0 - [3e0ce03c2717bc7c4a38a813d172ad95d1854321](https://github.com/pkuszn/e-biznes/tree/3e0ce03c2717bc7c4a38a813d172ad95d1854321)
+
 ## 
 
 # Status
 
 | No. | Project name | Status |
 |-------------|----------|--------------|
-| 1 | Docker | :soon: |
-| 2 | Scala Play | :soon: |
+| 1 | Docker | :white_check_mark: |
+| 2 | Scala Play | :white_check_mark: |
+| 3 | Kotlin | :soon: |
+| 4 | Go | :white_check_mark: |
