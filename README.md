@@ -21,6 +21,7 @@
 
 <b>Task no.3</b> <i>Kotlin</i>
 
+4.5 - 
 
 <b>Task no.4</b> <i>Go</i>
 
