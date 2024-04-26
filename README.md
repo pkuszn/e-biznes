@@ -25,6 +25,10 @@
 
 4.0 - [3e0ce03c2717bc7c4a38a813d172ad95d1854321](https://github.com/pkuszn/e-biznes/tree/3e0ce03c2717bc7c4a38a813d172ad95d1854321)
 
+<b>Task no.5</b> <i>Frontend React.JS</i>
+<b>Task no.6</b> <i>Tests</i>
+<b>Task no.7</b> <i>Sonar</i>
+
 ## 
 
 # Status
@@ -35,3 +39,6 @@
 | 2 | Scala Play | :white_check_mark: |
 | 3 | Kotlin | :white_check_mark: |
 | 4 | Go | :white_check_mark: |
+| 5 | Frontend React.JS | :soon: |
+| 6 | Tests | :soon: |
+| 7 | Sonar | :soon: |
