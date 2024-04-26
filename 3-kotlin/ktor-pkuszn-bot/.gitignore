@@ -34,3 +34,8 @@ out/
 
 ### VS Code ###
 .vscode/
+
+### Config properties ###
+*.properties
+
+target/
