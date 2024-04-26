@@ -13,8 +13,6 @@
 
 4.0 - [405399312a473e3663fc44ad6a167ca48fb6cc0b](https://github.com/pkuszn/e-biznes/tree/405399312a473e3663fc44ad6a167ca48fb6cc0b)
 
-4.5 -
-
 <b>Task no.2</b> <i>Scala Play</i>
 
 4.0 - [a08a4ff970a54973fb12fbdbf0fdcf76c14c7504](https://github.com/pkuszn/e-biznes/tree/a08a4ff970a54973fb12fbdbf0fdcf76c14c7504)
@@ -35,5 +33,5 @@
 |-------------|----------|--------------|
 | 1 | Docker | :white_check_mark: |
 | 2 | Scala Play | :white_check_mark: |
-| 3 | Kotlin | :soon: |
+| 3 | Kotlin | :white_check_mark: |
 | 4 | Go | :white_check_mark: |
