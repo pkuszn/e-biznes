@@ -42,6 +42,9 @@ const Logo = () => {
                         <a href="/basket">Basket</a>
                     </li>
                     <li>
+                        <a href='/payments'>Payments</a>
+                    </li>
+                    <li>
                         {user ? (
                             <p onClick={logoutHandler}>
                                 <b>Log out</b>

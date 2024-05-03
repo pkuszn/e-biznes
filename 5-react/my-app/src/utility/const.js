@@ -10,6 +10,8 @@ const api = {
     getUserByName: "user/name",
     getPurchasesByName: "purchase/user",
     makeOrder: "purchase/order",
+    payment: "payment",
+    status: "status",
     address: "http://localhost:1323/api",
 }
 
