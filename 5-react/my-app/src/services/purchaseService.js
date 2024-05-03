@@ -6,7 +6,7 @@ import { Purchase } from "../models/purchase.js";
 const fetchPurchasesByName = async() => {
     let endpoint = combiner(api.getPurchasesByName);
     try {
-        let response = await axios.post(endpoint);
+        let response = await axios.get(endpoint);
         if (response.data && Array.isArray(response.data)) {
             return response.data.map(p => new Purchase(p.id, p.id_product, p.id_user, p.price, p.quatity, p.purchase_date, p.delivery_type));
         } else {

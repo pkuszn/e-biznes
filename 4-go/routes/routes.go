@@ -63,4 +63,21 @@ func SetupRoutes(g *echo.Group) {
 	paymentTypeGroup := g.Group("/payment-type")
 	paymentTypeGroup.GET("", paymentTypeHandler.GetPaymentType)
 	paymentTypeGroup.GET("/:id", paymentTypeHandler.GetPaymentTypeById)
+
+	paymentRepo := repository.NewGormPaymentRepository(models.DB)
+	paymentHandler := handlers.NewPaymentHandler(paymentRepo)
+
+	paymentGroup := g.Group("/payment")
+	paymentGroup.GET("", paymentHandler.GetPayment)
+	paymentGroup.GET("/:id", paymentHandler.GetPaymentById)
+	paymentGroup.POST("", paymentHandler.CreatePayment)
+	paymentGroup.PUT("/:id", paymentHandler.UpdatePayment)
+	paymentGroup.DELETE("/:id", paymentHandler.DeletePayment)
+
+	statusRepo := repository.NewGormStatusRepository(models.DB)
+	statusHandler := handlers.NewStatusHandler(statusRepo)
+
+	statusGroup := g.Group("/status")
+	statusGroup.GET("", statusHandler.GetStatus)
+	statusGroup.GET("/:id", statusHandler.GetStatusById)
 }

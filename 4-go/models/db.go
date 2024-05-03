@@ -23,4 +23,6 @@ func Migrate(db *gorm.DB) {
 	db.AutoMigrate(&User{})
 	db.AutoMigrate(&DeliveryType{})
 	db.AutoMigrate(&PaymentType{})
+	db.AutoMigrate(&Payment{})
+	db.AutoMigrate(&Status{})
 }

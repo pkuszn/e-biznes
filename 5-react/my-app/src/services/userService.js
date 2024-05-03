@@ -11,7 +11,7 @@ const checkUser = async (name, password) => {
             "password": password
         }
 
-        const response = await axios.post(endpoint, data);
+        const response = await axios.get(endpoint, data);
 
         return response.data;
     } catch(error) {
@@ -26,7 +26,7 @@ const fetchUser = async(name) => {
     }
     let endpoint = combiner(api.getUserByName);
     try {
-        let response = await axios.post(endpoint, {
+        let response = await axios.get(endpoint, {
             "name": name
         });
         if (response.data) {
