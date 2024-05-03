@@ -5,7 +5,6 @@ import (
 	"go-rest-api/models"
 	"go-rest-api/repository"
 	"net/http"
-	"strconv"
 
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/gommon/log"
@@ -96,13 +95,4 @@ func (h *CategoryHandler) DeleteCategory(c echo.Context) error {
 	}
 
 	return c.NoContent(http.StatusNoContent)
-}
-
-func getIntId(c echo.Context) (uint, error) {
-	idStr := c.Param("id")
-	id, err := strconv.Atoi(idStr)
-	if err != nil {
-		return 0, err
-	}
-	return uint(id), nil
 }

@@ -9,6 +9,7 @@ type Product struct {
 	Category    int     `json:"category" gorm:"column:category"`
 	Price       float32 `json:"price" gorm:"column:price"`
 	CreatedDate string  `json:"createdDate" gorm:"column:created_date"`
+	Description string  `json:"description" gorm:"column:description"`
 	Available   int     `json:"available" gorm:"column:available"`
 }
 

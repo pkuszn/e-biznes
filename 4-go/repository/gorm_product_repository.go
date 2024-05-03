@@ -22,6 +22,7 @@ func (r *GormProductRepository) CreateProduct(product *dtos.Product) error {
 		Category:    product.Category,
 		Price:       product.Price,
 		CreatedDate: product.CreatedDate,
+		Description: product.Description,
 		Available:   product.Available,
 	}
 	return r.DB.Create(&newProduct).Error
@@ -58,6 +59,9 @@ func (r *GormProductRepository) UpdateProduct(id uint, updatedProduct *dtos.Prod
 	}
 	if updatedProduct.Price != 0 {
 		product.Price = updatedProduct.Price
+	}
+	if updatedProduct.Description != "" {
+		product.Description = updatedProduct.Description
 	}
 	if updatedProduct.CreatedDate != "" {
 		product.CreatedDate = updatedProduct.CreatedDate

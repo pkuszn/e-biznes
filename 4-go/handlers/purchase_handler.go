@@ -94,3 +94,34 @@ func (h *PurchaseHandler) DeletePurchase(c echo.Context) error {
 	return c.NoContent(http.StatusNoContent)
 
 }
+
+func (h *PurchaseHandler) GetPurchaseByUser(c echo.Context) error {
+	id_user, err := getUserId(c)
+	if err != nil {
+		log.Error("Invalid id user: ", err.Error())
+		return c.JSON(http.StatusBadRequest, "Invalid id user")
+	}
+
+	purchases, err := h.Repo.GetPurchaseByUser(id_user)
+	if err != nil {
+		log.Error("Purchases not found ", err.Error())
+		return c.JSON(http.StatusNotFound, "Purchases not found")
+	}
+
+	return c.JSON(http.StatusOK, purchases)
+}
+
+func (h *PurchaseHandler) MakeOrder(c echo.Context) error {
+	var purchases []dtos.Purchase
+	if err := c.Bind(&purchases); err != nil {
+		log.Error(err.Error())
+		return err
+	}
+
+	if err := h.Repo.MakeOrder(purchases); err != nil {
+		log.Error("Failed to make order. ", err.Error())
+		return c.JSON(http.StatusInternalServerError, "Failed to make order.")
+	}
+
+	return c.JSON(http.StatusCreated, purchases)
+}

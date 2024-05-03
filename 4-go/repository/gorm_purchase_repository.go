@@ -83,3 +83,30 @@ func (r *GormPurchaseRepository) UpdatePurchase(id uint, updatedPurchase *dtos.P
 func (r *GormPurchaseRepository) DeletePurchase(id uint) error {
 	return r.DB.Delete(&models.Purchase{}, id).Error
 }
+
+func (r *GormPurchaseRepository) MakeOrder(order []dtos.Purchase) error {
+	var newPurchases []models.Purchase
+	for _, purchase := range order {
+		newPurchase := models.Purchase{
+			ID:           purchase.ID,
+			IdProduct:    purchase.IdProduct,
+			IdUser:       purchase.IdUser,
+			Price:        purchase.Price,
+			Quantity:     purchase.Quantity,
+			PurchaseDate: purchase.PurchaseDate,
+			DeliveryType: purchase.DeliveryType,
+			PaymentType:  purchase.PaymentType,
+		}
+		newPurchases = append(newPurchases, newPurchase)
+	}
+	return r.DB.Create(&newPurchases).Error
+}
+
+func (r *GormPurchaseRepository) GetPurchaseByUser(id_user uint) ([]models.Purchase, error) {
+	var purchases []models.Purchase
+	err := r.DB.Where("id_user = ?", id_user).Find(&purchases).Error
+	if err != nil {
+		return nil, err
+	}
+	return purchases, nil
+}

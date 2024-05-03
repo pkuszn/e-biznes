@@ -38,4 +38,29 @@ func SetupRoutes(g *echo.Group) {
 	purchaseGroup.POST("", purchaseHandler.CreatePurchase)
 	purchaseGroup.PUT("/:id", purchaseHandler.UpdatePurchase)
 	purchaseGroup.DELETE("/:id", purchaseHandler.DeletePurchase)
+	purchaseGroup.POST("/order", purchaseHandler.MakeOrder)
+	purchaseGroup.GET("/user/:id_user", purchaseHandler.GetPurchaseByUser)
+
+	userRepo := repository.NewGormUserRepository(models.DB)
+	userHandler := handlers.NewUserHandler(userRepo)
+
+	userGroup := g.Group("/user")
+	userGroup.GET("", userHandler.GetUser)
+	userGroup.GET("/:id", userHandler.GetUserById)
+	userGroup.GET("/check", userHandler.CheckUser)
+	userGroup.GET("/name", userHandler.FindByName)
+
+	deliveryTypeRepo := repository.NewGormDeliveryTypeRepository(models.DB)
+	deliveryTypeHandler := handlers.NewDeliveryTypeHandler(deliveryTypeRepo)
+
+	deliveryTypeGroup := g.Group("/delivery-type")
+	deliveryTypeGroup.GET("", deliveryTypeHandler.GetDeliveryType)
+	deliveryTypeGroup.GET("/:id", deliveryTypeHandler.GetDeliveryTypeById)
+
+	paymentTypeRepo := repository.NewGormPaymentTypeRepository(models.DB)
+	paymentTypeHandler := handlers.NewPaymentTypeHandler(paymentTypeRepo)
+
+	paymentTypeGroup := g.Group("/payment-type")
+	paymentTypeGroup.GET("", paymentTypeHandler.GetPaymentType)
+	paymentTypeGroup.GET("/:id", paymentTypeHandler.GetPaymentTypeById)
 }
