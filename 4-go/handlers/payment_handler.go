@@ -93,3 +93,19 @@ func (h *PaymentHandler) DeletePayment(c echo.Context) error {
 
 	return c.NoContent(http.StatusNoContent)
 }
+
+func (h *PaymentHandler) FindByUser(c echo.Context) error {
+	id, err := getUserId(c)
+	if err != nil {
+		log.Error("Invalid user ID: ", err.Error())
+		return c.JSON(http.StatusBadRequest, "Invalid payment ID")
+	}
+
+	payments, err := h.Repo.FindByUser(id)
+	if err != nil {
+		log.Error("Payments not found ", err.Error())
+		return c.JSON(http.StatusNotFound, "payments not found")
+	}
+
+	return c.JSON(http.StatusOK, payments)
+}

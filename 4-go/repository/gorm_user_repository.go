@@ -51,9 +51,8 @@ func (r *GormUserRepository) CheckUser(name string, password string) (*models.Us
 	if err != nil {
 		return nil, err
 	}
-
 	if user.Password != password {
-		return nil, errors.New("provided password is invalid")
+		return nil, errors.New("provided password is invalid. ")
 	}
 
 	return &user, nil

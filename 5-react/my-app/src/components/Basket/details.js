@@ -1,20 +1,30 @@
 import React, { useState } from "react";
-import { paymentTypeMapper, deliveryTypeMapper } from "../../utility/utils";
+import { paymentTypeMapper, deliveryTypeMapper, paymentMethodMapper } from "../../utility/utils";
 
 
-const Details = ({ user, deliveryTypes, paymentTypes, totalPrice, selectPaymentType, selectDeliveryType }) => {
+const Details = ({ user, deliveryTypes, paymentTypes, paymentMethods, totalPrice, selectPaymentType, selectDeliveryType, selectedPaymentMethod }) => {
     const [paymentTypeOption, setPaymentTypeOption] = useState("null");
     const [deliveryTypeOption, setDeliveryTypeOption] = useState("null");
+    const [paymentMethodOption, setPaymentMethodOption] = useState("null");
 
     const handlePaymentTypeOption = (event) => {
-        setPaymentTypeOption(event.target.value);
-        selectPaymentType(paymentTypeMapper(event.target.value))
+        let value = event.target.value;
+        setPaymentTypeOption(value);
+        selectPaymentType(paymentTypeMapper(value))
     };
 
     const handleDeliveryTypeOption = (event) => {
-        setDeliveryTypeOption(event.target.value);
-        selectDeliveryType(deliveryTypeMapper(event.target.value));
+        let value = event.target.value;
+        setDeliveryTypeOption(value);
+        selectDeliveryType(deliveryTypeMapper(value));
     }
+
+    const handlePaymentMethodOption = (event) => {
+        let value = event.target.value;
+        setPaymentMethodOption(value);
+        selectedPaymentMethod(paymentMethodMapper(value));
+    }
+
 
     return (
         <div className="cart-details">
@@ -41,7 +51,7 @@ const Details = ({ user, deliveryTypes, paymentTypes, totalPrice, selectPaymentT
                     </p>
                 </div>
                 <div>
-                    <label>Selected payment method</label>
+                    <label>Selected payment type</label>
                     <p>
                         <b>{paymentTypeOption}</b>
                     </p>
@@ -49,6 +59,12 @@ const Details = ({ user, deliveryTypes, paymentTypes, totalPrice, selectPaymentT
 
                 <div>
                     <label>Selected delivery type:</label>
+                    <p>
+                        <b>{deliveryTypeOption}</b>
+                    </p>
+                </div>
+                <div>
+                    <label>Selected payment method:</label>
                     <p>
                         <b>{deliveryTypeOption}</b>
                     </p>
@@ -77,7 +93,6 @@ const Details = ({ user, deliveryTypes, paymentTypes, totalPrice, selectPaymentT
                         ))}
                     </select>
                 </div>
-
                 <div>
                     <label htmlFor="selectOptions">Select Delivery Type:</label>
                     <select
@@ -87,6 +102,21 @@ const Details = ({ user, deliveryTypes, paymentTypes, totalPrice, selectPaymentT
                     >
                         <option value="">Select Delivery Type</option>
                         {deliveryTypes.map((option) => (
+                            <option key={option.id} value={option.name}>
+                                {option.name}
+                            </option>
+                        ))}
+                    </select>
+                </div>
+                <div>
+                    <label htmlFor="selectOptions">Select Payment Method:</label>
+                    <select
+                        id="selectOptions"
+                        value={paymentMethodOption}
+                        onChange={handlePaymentMethodOption}
+                    >
+                        <option value="">Select Payment Method</option>
+                        {paymentMethods.map((option) => (
                             <option key={option.id} value={option.name}>
                                 {option.name}
                             </option>

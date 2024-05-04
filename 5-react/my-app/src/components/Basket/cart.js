@@ -8,14 +8,17 @@ import { makeOrder } from "../../services/purchaseService.js";
 import Details from "./details.js";
 import { PurchaseDto } from "../../dtos/purchaseDto.js";
 import { Purchase } from "../../models/purchase.js";
+import { fetchPaymentMethods } from "../../services/paymentMethodService.js";
 
 const Cart = () => {
     const [user, setUser] = useState({});
     const [deliveryTypes, setDeliveryTypes] = useState([]);
     const [paymentTypes, setPaymentTypes] = useState([]);
+    const [paymentMethods, setPaymentMethods] = useState([]);
     const [products, setProducts] = useState([]);
     const [selectedPaymentType, selectPaymentType] = useState(1);
     const [selectedDeliveryType, selectDeliveryType] = useState(1);
+    const [selectedPaymentMethod, selectPaymentMethod] = useState(1);
 
     const getTotalPrice = () => {
         return products.reduce(
@@ -77,14 +80,13 @@ const Cart = () => {
                 console.log(res);
             })
             .catch((err) => {
-                setUser({});
+                console.log(err);
             });
         fetchDeliveryType()
             .then((res) => {
                 setDeliveryTypes(res);
             })
             .catch((err) => {
-                setDeliveryTypes([]);
                 console.log(err);
             });
         fetchPaymentType()
@@ -93,9 +95,15 @@ const Cart = () => {
                 console.log(res);
             })
             .catch((err) => {
-                setPaymentTypes([]);
                 console.log(err);
             });
+        fetchPaymentMethods()
+            .then((res) => {
+                setPaymentMethods(res);
+            })
+            .catch((err) => {
+                console.log(err);
+            })
         purchaseHandler();
     }, []);
 
@@ -127,9 +135,11 @@ const Cart = () => {
                 user={user}
                 deliveryTypes={deliveryTypes}
                 paymentTypes={paymentTypes}
+                paymentMethods={paymentMethods}
                 totalPrice={getTotalPrice()}
                 selectDeliveryType={selectDeliveryType}
                 selectPaymentType={selectPaymentType}
+                selectedPaymentMethod={selectPaymentMethod}
             ></Details>
             <div className="cart-submit">
                 <button className="clear-cart-button submit-buttons" onClick={handleCleanBasket}>

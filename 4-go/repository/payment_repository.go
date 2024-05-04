@@ -11,4 +11,5 @@ type PaymentRepository interface {
 	CreatePayment(payment *dtos.Payment) error
 	UpdatePayment(id uint, payment *dtos.Payment) (*models.Payment, error)
 	DeletePayment(id uint) error
+	FindByUser(id_user uint) ([]models.Payment, error)
 }

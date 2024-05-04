@@ -17,14 +17,11 @@ func NewGormPurchaseRepository(db *gorm.DB) *GormPurchaseRepository {
 
 func (r *GormPurchaseRepository) CreatePurchase(purchase *dtos.Purchase) error {
 	newPurchase := models.Purchase{
-		ID:           purchase.ID,
-		IdProduct:    purchase.IdProduct,
-		IdUser:       purchase.IdUser,
-		Price:        purchase.Price,
-		Quantity:     purchase.Quantity,
-		PurchaseDate: purchase.PurchaseDate,
-		DeliveryType: purchase.DeliveryType,
-		PaymentType:  purchase.PaymentType,
+		ID:        purchase.ID,
+		IdOrder:   purchase.IdOrder,
+		IdProduct: purchase.IdProduct,
+		Price:     purchase.Price,
+		Quantity:  purchase.Quantity,
 	}
 	return r.DB.Create(&newPurchase).Error
 }
@@ -52,26 +49,17 @@ func (r *GormPurchaseRepository) UpdatePurchase(id uint, updatedPurchase *dtos.P
 	if err != nil {
 		return nil, err
 	}
+	if updatedPurchase.IdOrder != 0 {
+		purchase.IdOrder = updatedPurchase.IdOrder
+	}
 	if updatedPurchase.IdProduct != 0 {
 		purchase.IdProduct = updatedPurchase.IdProduct
-	}
-	if updatedPurchase.IdUser != 0 {
-		purchase.IdUser = updatedPurchase.IdUser
 	}
 	if updatedPurchase.Price != 0.0 {
 		purchase.Price = updatedPurchase.Price
 	}
 	if updatedPurchase.Quantity != 0 {
 		purchase.Quantity = updatedPurchase.Quantity
-	}
-	if updatedPurchase.PurchaseDate != "" {
-		purchase.PurchaseDate = updatedPurchase.PurchaseDate
-	}
-	if updatedPurchase.DeliveryType != 0 {
-		purchase.DeliveryType = updatedPurchase.DeliveryType
-	}
-	if updatedPurchase.PaymentType != 0 {
-		purchase.PaymentType = updatedPurchase.PaymentType
 	}
 
 	err = r.DB.Save(purchase).Error
@@ -88,14 +76,11 @@ func (r *GormPurchaseRepository) MakeOrder(order []dtos.Purchase) error {
 	var newPurchases []models.Purchase
 	for _, purchase := range order {
 		newPurchase := models.Purchase{
-			ID:           purchase.ID,
-			IdProduct:    purchase.IdProduct,
-			IdUser:       purchase.IdUser,
-			Price:        purchase.Price,
-			Quantity:     purchase.Quantity,
-			PurchaseDate: purchase.PurchaseDate,
-			DeliveryType: purchase.DeliveryType,
-			PaymentType:  purchase.PaymentType,
+			ID:        purchase.ID,
+			IdOrder:   purchase.IdOrder,
+			IdProduct: purchase.IdProduct,
+			Price:     purchase.Price,
+			Quantity:  purchase.Quantity,
 		}
 		newPurchases = append(newPurchases, newPurchase)
 	}

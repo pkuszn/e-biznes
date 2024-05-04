@@ -12,6 +12,7 @@ const api = {
     makeOrder: "purchase/order",
     payment: "payment",
     status: "status",
+    paymentMethod: "payment-method",
     address: "http://localhost:1323/api",
 }
 
@@ -34,9 +35,30 @@ const deliveryTypes = {
     post: "Post"
 }
 
+const statuses = {
+    completed: "Completed",
+    pending: "Pending",
+    cancelled: "Cancelled",
+    processing: "Processing",
+    failed: "Failed",
+    refunded: "Refunded",
+    verified: "Verified",
+    awaitingConfirmation: "Awaiting Confirmation",
+    suspended: "Suspended"
+}
+
+const paymentMethods = {
+    creditCard: "Credit Card",
+    bankTransfer: "Bank transfer",
+    blik: "Blik",
+    payPal: "Pay Pal"
+}
+
 export {
     api, 
     category,
     paymentTypes,
-    deliveryTypes
+    deliveryTypes,
+    statuses,
+    paymentMethods
 }

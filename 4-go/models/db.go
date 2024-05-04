@@ -8,7 +8,7 @@ import (
 var DB *gorm.DB
 
 func Initialize(dbName string) *gorm.DB {
-	db, err := gorm.Open(sqlite.Open(dbName), &gorm.Config{})
+	db, err := gorm.Open(sqlite.Open(dbName), &gorm.Config{SkipDefaultTransaction: true})
 	if err != nil {
 		panic("Failed to connect to database")
 	}
@@ -25,4 +25,6 @@ func Migrate(db *gorm.DB) {
 	db.AutoMigrate(&PaymentType{})
 	db.AutoMigrate(&Payment{})
 	db.AutoMigrate(&Status{})
+	db.AutoMigrate(&PaymentMethod{})
+	db.AutoMigrate(&Order{})
 }

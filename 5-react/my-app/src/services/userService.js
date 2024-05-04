@@ -26,6 +26,7 @@ const fetchUser = async(name) => {
     }
     let endpoint = combiner(api.getUserByName);
     try {
+        console.log(name)
         let response = await axios.get(endpoint, {
             "name": name
         });

@@ -18,6 +18,7 @@ func SetupRoutes(g *echo.Group) {
 	productGroup.POST("", productHandler.CreateProduct)
 	productGroup.PUT("/:id", productHandler.UpdateProduct)
 	productGroup.DELETE("/:id", productHandler.DeleteProduct)
+	productGroup.GET("/category/:id_category", productHandler.GetProductByCategory)
 
 	categoryRepo := repository.NewGormCategoryRepository(models.DB)
 	categoryHandler := handlers.NewCategoryHandler(categoryRepo)
@@ -73,6 +74,7 @@ func SetupRoutes(g *echo.Group) {
 	paymentGroup.POST("", paymentHandler.CreatePayment)
 	paymentGroup.PUT("/:id", paymentHandler.UpdatePayment)
 	paymentGroup.DELETE("/:id", paymentHandler.DeletePayment)
+	paymentGroup.GET("/user/:id_user", paymentHandler.FindByUser)
 
 	statusRepo := repository.NewGormStatusRepository(models.DB)
 	statusHandler := handlers.NewStatusHandler(statusRepo)
@@ -80,4 +82,23 @@ func SetupRoutes(g *echo.Group) {
 	statusGroup := g.Group("/status")
 	statusGroup.GET("", statusHandler.GetStatus)
 	statusGroup.GET("/:id", statusHandler.GetStatusById)
+
+	paymentMethodRepository := repository.NewGormPaymentMethodRepository(models.DB)
+	paymentMethodHandler := handlers.NewPaymentMethodHandler(paymentMethodRepository)
+
+	paymentMethodGroup := g.Group("/payment-method")
+	paymentMethodGroup.GET("", paymentMethodHandler.GetPaymentMethod)
+	paymentMethodGroup.GET("/:id", paymentMethodHandler.GetPaymentMethodById)
+
+	orderRepo := repository.NewGormOrderRepository(models.DB)
+	orderHandler := handlers.NewOrderHandler(orderRepo)
+
+	orderGroup := g.Group("/order")
+	orderGroup.GET("", orderHandler.GetOrder)
+	orderGroup.GET("/:id", orderHandler.GetOrderById)
+	orderGroup.POST("", orderHandler.CreateOrder)
+	orderGroup.PUT("/:id", orderHandler.UpdateOrder)
+	orderGroup.DELETE("/:id", orderHandler.DeleteOrder)
+	orderGroup.POST("/make", orderHandler.MakeOrder)
+	orderGroup.GET("/user/:id_user", orderHandler.GetOrderByUser)
 }

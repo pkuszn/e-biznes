@@ -72,3 +72,24 @@ func (r *GormPaymentRepository) UpdatePayment(id uint, updatedPayment *dtos.Paym
 func (r *GormPaymentRepository) DeletePayment(id uint) error {
 	return r.DB.Delete(&models.Payment{}, id).Error
 }
+
+func (r *GormPaymentRepository) FindByUser(id uint) ([]models.Payment, error) {
+	var orders []models.Order
+	var payments []models.Payment
+	var orderIDs []int64
+
+	err_order := r.DB.Where("id_user = ?", id).Find(&orders).Error
+	if err_order != nil {
+		return nil, err_order
+	}
+
+	for _, order := range orders {
+		orderIDs = append(orderIDs, order.ID)
+	}
+
+	err_payment := r.DB.Where("id_order IN (?)", orderIDs).Find(&payments).Error
+	if err_payment != nil {
+		return nil, err_payment
+	}
+	return payments, nil
+}

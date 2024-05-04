@@ -95,3 +95,19 @@ func (h *ProductHandler) DeleteProduct(c echo.Context) error {
 
 	return c.NoContent(http.StatusNoContent)
 }
+
+func (h *ProductHandler) GetProductByCategory(c echo.Context) error {
+	id_category, err := getCategoryId(c)
+	if err != nil {
+		log.Error("Invalid category ID: ", err.Error())
+		return c.JSON(http.StatusBadRequest, "Invalid category ID")
+	}
+
+	products, err := h.Repo.GetProductByCategory(id_category)
+	if err != nil {
+		log.Error("Cannot find product by given id category ", err.Error())
+		return c.JSON(http.StatusNotFound, "Product not found")
+	}
+
+	return c.JSON(http.StatusOK, products)
+}

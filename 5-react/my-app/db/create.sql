@@ -11,3 +11,8 @@ CREATE TABLE `status` (
     id INTEGER PRIMARY KEY,
     name INTEGER TEXT NOT NULL
 )
+
+CREATE TABLE `payment_method` (
+    id INTEGER PRIMARY KEY,
+    name INTEGER TEXT NOT NULL
+)

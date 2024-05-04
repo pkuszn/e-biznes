@@ -18,5 +18,5 @@ const fetchPayments = async() => {
 }
 
 export {
-    fetchPaymentType
+    fetchPayments
 }

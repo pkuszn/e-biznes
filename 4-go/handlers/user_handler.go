@@ -64,10 +64,9 @@ func (h *UserHandler) CheckUser(c echo.Context) error {
 		log.Error(err.Error())
 		return err
 	}
-
 	user, err := h.Repo.CheckUser(userNamePassword.Name, userNamePassword.Password)
 	if err != nil {
-		log.Error("User not found. Provided password is invalid", err.Error())
+		log.Error("User not found", err.Error())
 		return c.JSON(http.StatusBadRequest, "User not found")
 	}
 
