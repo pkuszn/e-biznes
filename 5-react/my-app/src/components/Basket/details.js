@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import { paymentTypeMapper, deliveryTypeMapper, paymentMethodMapper } from "../../utility/utils";
 
 
-const Details = ({ user, deliveryTypes, paymentTypes, paymentMethods, totalPrice, selectPaymentType, selectDeliveryType, selectedPaymentMethod }) => {
+const Details = ({ user, deliveryTypes, paymentTypes, paymentMethods, totalPrice, selectPaymentType, selectDeliveryType, selectedPaymentMethod, selectedPayNow }) => {
     const [paymentTypeOption, setPaymentTypeOption] = useState("null");
     const [deliveryTypeOption, setDeliveryTypeOption] = useState("null");
     const [paymentMethodOption, setPaymentMethodOption] = useState("null");
+    const [payNow, setPayNow] = useState(false);
 
     const handlePaymentTypeOption = (event) => {
         let value = event.target.value;
@@ -25,6 +26,10 @@ const Details = ({ user, deliveryTypes, paymentTypes, paymentMethods, totalPrice
         selectedPaymentMethod(paymentMethodMapper(value));
     }
 
+    const handlePayNowChange = (event) => {
+        setPayNow(event.target.checked);
+        selectedPayNow(event.target.checked);
+    };
 
     return (
         <div className="cart-details">
@@ -66,7 +71,7 @@ const Details = ({ user, deliveryTypes, paymentTypes, paymentMethods, totalPrice
                 <div>
                     <label>Selected payment method:</label>
                     <p>
-                        <b>{deliveryTypeOption}</b>
+                        <b>{paymentMethodOption}</b>
                     </p>
                 </div>
                 <div>
@@ -122,6 +127,10 @@ const Details = ({ user, deliveryTypes, paymentTypes, paymentMethods, totalPrice
                             </option>
                         ))}
                     </select>
+                </div>
+                <div>
+                    <label htmlFor="payNowCheckbox">Pay now</label>
+                    <input type="checkbox" id="payNowCheckbox" checked={payNow} onChange={handlePayNowChange} />
                 </div>
             </div>
         </div>

@@ -1,17 +1,17 @@
 export class PaymentDto {
     id;
-    id_order;
-    payment_type;
+    idOrder;
+    paymentType;
     amount;
-    payment_date;
+    paymentDate;
     status;
 
-    constructor(id, id_order, payment_type, amount, payment_date, status) {
+    constructor(id, idOrder, paymentType, amount, paymentDate, status) {
         this.id = id;
-        this.id_order = id_order;
-        this.payment_type = payment_type;
+        this.idOrder = idOrder;
+        this.paymentType = paymentType;
         this.amount = amount;
-        this.payment_date = payment_date;
+        this.paymentDate = paymentDate;
         this.status = status;
     }
 }

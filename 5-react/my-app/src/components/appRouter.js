@@ -4,7 +4,6 @@ import Basket from "../pages/basket";
 import Login from "../pages/login";
 import Products from "../pages/products";
 import Payment from "../pages/payment"
-import PaymentForm from "../components/Payment/paymentForm"
 
 const AppRouter = () => {
     return (
@@ -17,7 +16,6 @@ const AppRouter = () => {
                     <Route path="/products/" element={<Products />} />
                     <Route path="/products/:idCategory" element={<Products />} />
                     <Route path="/payments" element={<Payment />} />
-                    <Route path="/payment-form" element={<PaymentForm />} />
                 </Routes>
             </BrowserRouter>
         </div>

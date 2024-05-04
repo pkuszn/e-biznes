@@ -26,13 +26,14 @@ const fetchUser = async(name) => {
     }
     let endpoint = combiner(api.getUserByName);
     try {
-        console.log(name)
-        let response = await axios.get(endpoint, {
+        const data = {
             "name": name
-        });
+        }
+        let response = await axios.post(endpoint, data);
+        console.log(response);
         if (response.data) {
             let u = response.data;
-            return new User(u.id, u.name, u.surname, u.address, u.created_date, u.password);
+            return new User(u.id, u.name, u.surname, u.address, u.createdDate, u.password);
         } else {
             return {};
         }

@@ -4,14 +4,14 @@ export class User {
     surname;
     password;
     address;
-    created_date;
+    createdDate;
 
-    constructor(id, name, surname, address, created_date, password) {
+    constructor(id, name, surname, address, createdDate, password) {
         this.id = id;
         this.name = name;
         this.surname = surname;
         this.address = address;
-        this.created_date = created_date;
+        this.createdDate = createdDate;
         this.password = password;
     }
 }

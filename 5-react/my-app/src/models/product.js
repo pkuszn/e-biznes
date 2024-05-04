@@ -3,7 +3,7 @@ export class Product {
     name;
     category;
     price;
-    created_date;
+    createdDate;
     description;
     available;
 
@@ -13,15 +13,15 @@ export class Product {
         category,
         price,
         created_date,
-        description,
+        createdDate,
         available
     ) {
         this.id = id;
         this.name = name;
         this.category = category;
         this.price = price;
-        this.created_date = created_date;
-        this.description = description;
+        this.createdDate = created_date;
+        this.description = createdDate;
         this.available = available;
     }
 }

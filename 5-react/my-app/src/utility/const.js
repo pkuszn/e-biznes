@@ -9,21 +9,13 @@ const api = {
     checkUser: "user/check",
     getUserByName: "user/name",
     getPurchasesByName: "purchase/user",
-    makeOrder: "purchase/order",
+    makeOrder: "order/make",
     payment: "payment",
     status: "status",
     paymentMethod: "payment-method",
+    paymentByUser: 'payment/user',
     address: "http://localhost:1323/api",
 }
-
-const category = {
-    blackTeas: "Black teas",
-    greenTeas: "Green teas",
-    whiteTeas: "White teas",
-    oolongTeas: "Oolong teas",
-    fruitTeas: "fruitTeas",
-    teaAccessories: "Tea accessories"
-};
 
 const paymentTypes = {
     cashOnDelivery: "Cash on delivery",
@@ -35,24 +27,33 @@ const deliveryTypes = {
     post: "Post"
 }
 
+const category = {
+    1: "Black teas",
+    2: "Green teas",
+    3: "White teas",
+    4: "Oolong teas",
+    5: "Fruit teas",
+    6: "Tea accessories"
+};
+
 const statuses = {
-    completed: "Completed",
-    pending: "Pending",
-    cancelled: "Cancelled",
-    processing: "Processing",
-    failed: "Failed",
-    refunded: "Refunded",
-    verified: "Verified",
-    awaitingConfirmation: "Awaiting Confirmation",
-    suspended: "Suspended"
-}
+    1: "Completed",
+    2: "Pending",
+    3: "Cancelled",
+    4: "Processing",
+    5: "Failed",
+    6: "Refunded",
+    7: "Verified",
+    8: "Awaiting Confirmation",
+    9: "Suspended"
+};
 
 const paymentMethods = {
-    creditCard: "Credit Card",
-    bankTransfer: "Bank transfer",
-    blik: "Blik",
-    payPal: "Pay Pal"
-}
+    1: "Credit Card",
+    2: "Bank Transfer",
+    3: "Blik",
+    4: "PayPal"
+};
 
 export {
     api, 

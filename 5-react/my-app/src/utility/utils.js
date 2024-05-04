@@ -1,4 +1,4 @@
-import {api, category, deliveryTypes, paymentMethods, paymentTypes} from './const.js'
+import {api, category, deliveryTypes, statuses, paymentMethods, paymentTypes} from './const.js'
 
 const combiner = (endpoint, args) => {
     let address = api.address;
@@ -6,32 +6,6 @@ const combiner = (endpoint, args) => {
         return [address, endpoint].join('/');
     }
     return [address, endpoint, args].join('/');
-}
-
-const categoryMapper = (idCategory) => {
-    switch (idCategory) {
-        case 1: {
-            return category.blackTeas;
-        }
-        case 2: {
-            return category.greenTeas;
-        }
-        case 3: {
-            return category.whiteTeas;
-        }
-        case 4: {
-            return category.oolongTeas;
-        }
-        case 5: {
-            return category.fruitTeas;
-        }
-        case 6: {
-            return category.teaAccessories;
-        }
-        default: {
-            return category.blackTeas;
-        }
-    }
 }
 
 const deliveryTypeMapper = (name) => {
@@ -82,10 +56,16 @@ const paymentMethodMapper = (name) => {
     }
 }
 
+const statusEnum = (id) => statuses[id] || "Unknown";
+const paymentMethodEnum = (id) => paymentMethods[id] || "Unknown";
+const categoryEnum = (id) => category[id] || "Unknown";
+
 export {
-    categoryMapper,
+    categoryEnum,
     combiner,
     deliveryTypeMapper,
     paymentTypeMapper,
-    paymentMethodMapper
+    paymentMethodMapper,
+    statusEnum,
+    paymentMethodEnum,
 }

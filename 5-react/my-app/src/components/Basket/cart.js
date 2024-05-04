@@ -4,11 +4,13 @@ import CartItem from "./cartItem.js";
 import { fetchUser } from "../../services/userService.js";
 import { fetchDeliveryType } from "../../services/deliveryTypeService.js";
 import { fetchPaymentType } from "../../services/paymentTypeService.js";
-import { makeOrder } from "../../services/purchaseService.js";
 import Details from "./details.js";
 import { PurchaseDto } from "../../dtos/purchaseDto.js";
 import { Purchase } from "../../models/purchase.js";
 import { fetchPaymentMethods } from "../../services/paymentMethodService.js";
+import { createPayment } from "../../services/paymentService.js";
+import { makeOrder } from "../../services/orderService.js";
+import { Order } from "../../models/order.js"
 
 const Cart = () => {
     const [user, setUser] = useState({});
@@ -18,7 +20,8 @@ const Cart = () => {
     const [products, setProducts] = useState([]);
     const [selectedPaymentType, selectPaymentType] = useState(1);
     const [selectedDeliveryType, selectDeliveryType] = useState(1);
-    const [selectedPaymentMethod, selectPaymentMethod] = useState(1);
+    const [selectedPaymentMethod, selectPaymentMethod] = useState(null);
+    const [selectedPayNow, selectPayNow] = useState(0);
 
     const getTotalPrice = () => {
         return products.reduce(
@@ -40,7 +43,7 @@ const Cart = () => {
     const handleBuy = () => {
         let purchases = Object.entries(products).map(([productId, product]) => {
             return new Purchase(
-                productId,
+                product.id,
                 user.id,
                 product.price,
                 product.quantity,
@@ -56,11 +59,25 @@ const Cart = () => {
 
         makeOrder(purchases)
             .then((res) => {
-                alert('Products have been purchased.')
-                handleCleanBasket();
+                console.log(res);
+                let order = new Order(res.id, res.idUser, res.amount, res.purchaseDate, res.deliveryType, res.paymentType)
+                if (order == undefined || order == null) {
+                    alert("An error occured");
+                } else {
+                    let status = selectedPayNow;
+                    createPayment(order, status)
+                        .then((res) => {
+                            console.log(res);
+                            alert('Products have been purchased.')
+                        })
+                        .catch((err) => {
+                            console.log(err);
+                        })
+                    handleCleanBasket();    
+                }
             })
             .catch((err) => {
-                alert(err.data.status);
+                alert(err);
             })
     };
 
@@ -140,6 +157,7 @@ const Cart = () => {
                 selectDeliveryType={selectDeliveryType}
                 selectPaymentType={selectPaymentType}
                 selectedPaymentMethod={selectPaymentMethod}
+                selectedPayNow={selectPayNow}
             ></Details>
             <div className="cart-submit">
                 <button className="clear-cart-button submit-buttons" onClick={handleCleanBasket}>

@@ -49,7 +49,7 @@ func SetupRoutes(g *echo.Group) {
 	userGroup.GET("", userHandler.GetUser)
 	userGroup.GET("/:id", userHandler.GetUserById)
 	userGroup.GET("/check", userHandler.CheckUser)
-	userGroup.GET("/name", userHandler.FindByName)
+	userGroup.POST("/name", userHandler.FindByName)
 
 	deliveryTypeRepo := repository.NewGormDeliveryTypeRepository(models.DB)
 	deliveryTypeHandler := handlers.NewDeliveryTypeHandler(deliveryTypeRepo)

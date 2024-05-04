@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { categoryMapper } from "../../utility/utils";
+import { categoryEnum } from "../../utility/utils";
 import { PurchaseDto } from "../../dtos/purchaseDto.js";
 
 const Element = ({ product }) => {
@@ -35,7 +35,7 @@ const Element = ({ product }) => {
                     <b>ID:</b> {product.id}
                 </p>
                 <p>
-                    <b>Category:</b> {categoryMapper(product.category)}
+                    <b>Category:</b> {categoryEnum(product.category)}
                 </p>
                 <p>
                     <b>Price:</b> ${product.price.toFixed(2)}

@@ -8,7 +8,7 @@ const fetchProducts = async () => {
     try {
         let response = await axios.get(endpoint);
         if (response.data && Array.isArray(response.data)) {
-            return response.data.map(p => new Product(p.id, p.name, p.category, p.price, p.created_date, p.description, p.available));
+            return response.data.map(p => new Product(p.id, p.name, p.category, p.price, p.createdDate, p.description, p.available));
         } else {
             return [];
         }
@@ -23,7 +23,7 @@ const fetchProduct = async(id) => {
         let response = await axios.get(endpoint);
         if (response.data) {
             let p = response.data;
-            return new Response(p.id, p.name, p.category, p.price, p.created_date, p.description, p.available);
+            return new Response(p.id, p.name, p.category, p.price, p.createdDate, p.description, p.available);
         } else {
             return {};
         }
@@ -37,7 +37,7 @@ const fetchProductByCategory = async(idCategory) => {
     try {
         let response = await axios.get(endpoint);
         if (response.data && Array.isArray(response.data)) {
-            return response.data.map(p => new Product(p.id, p.name, p.category, p.price, p.created_date, p.description, p.available));
+            return response.data.map(p => new Product(p.id, p.name, p.category, p.price, p.createdDate, p.description, p.available));
         } else {
             return [];
         }

@@ -1,27 +1,27 @@
 export class Purchase {
-    id_product;
-    id_user;
+    idProduct;
+    idUser;
     price;
     quantity;
-    purchase_date;
-    delivery_type;
-    payment_type;
+    purchaseDate;
+    deliveryType;
+    paymentType;
 
     constructor(
-        id_product,
-        id_user,
+        idProduct,
+        idUser,
         price,
         quantity,
-        purchase_date,
-        delivery_type,
-        payment_type
+        purchaseDate,
+        deliveryType,
+        paymentType
     ) {
-        this.id_product = id_product;
-        this.id_user = id_user;
+        this.idProduct = idProduct;
+        this.idUser = idUser;
         this.price = price;
         this.quantity = quantity;
-        this.purchase_date = purchase_date;
-        this.delivery_type = delivery_type;
-        this.payment_type = payment_type;
+        this.purchaseDate = purchaseDate;
+        this.deliveryType = deliveryType;
+        this.paymentType = paymentType;
     }
 }

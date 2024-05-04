@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css";
 import { MdDeleteForever } from "react-icons/md";
-import { categoryMapper } from "../../utility/utils";
+import { categoryEnum } from "../../utility/utils";
 
 const CartItem = ({ product }) => {
     const removeFromBasketHandler = () => {
@@ -19,7 +19,7 @@ const CartItem = ({ product }) => {
     return (
         <tr className="cart-item">
             <td>{product.name}</td>
-            <td>{categoryMapper(product.category)}</td>
+            <td>{categoryEnum(product.category)}</td>
             <td>{product.price}$</td>
             <td>{product.quantity}</td>
             <td>                

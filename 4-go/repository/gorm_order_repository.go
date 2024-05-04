@@ -1,6 +1,7 @@
 package repository
 
 import (
+	"fmt"
 	"go-rest-api/dtos"
 	"go-rest-api/models"
 
@@ -88,7 +89,7 @@ func (r *GormOrderRepository) GetOrderByUser(id_user uint) ([]models.Order, erro
 func (r *GormOrderRepository) MakeOrder(purchases []dtos.OrderPurchase) (*models.Order, error) {
 	tx := r.DB.Begin()
 	var newOrder *models.Order
-
+	fmt.Println(purchases)
 	defer func() {
 		if r := recover(); r != nil {
 			tx.Rollback()

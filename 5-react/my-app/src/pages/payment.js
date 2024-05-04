@@ -4,9 +4,7 @@ import PaymentTable from '../components/Payment/paymentTable'
 const Payment = () => {
   return (
     <div>
-        <PaymentTable>
-
-        </PaymentTable>
+        <PaymentTable></PaymentTable>
     </div>
   )
 }

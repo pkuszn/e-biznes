@@ -1,21 +1,35 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
 import './style.css';
+import { fetchUser } from "../../services/userService"
+import { fetchPaymentByUser } from '../../services/paymentService';
+import { statusEnum, paymentMethodEnum } from '../../utility/utils';
 
 const PaymentTable = () => {
-    //TODO: Fake data
-  const [payments, setPayments] = useState([
-    { id: 1, idOrder: 101, paymentType: 'Credit Card', amount: 100.00, paymentDate: '2024-05-01', status: 'Completed' },
-    { id: 2, idOrder: 102, paymentType: 'PayPal', amount: 50.00, paymentDate: '2024-05-02', status: 'Pending' },
-    { id: 3, idOrder: 103, paymentType: 'Bank Transfer', amount: 200.00, paymentDate: '2024-05-03', status: 'Failed' },
-  ]);
+  const [payments, setPayments] = useState([]);
+  useEffect(() => {
+    fetchUser(getUserName())
+      .then((res) => {
+        fetchPaymentByUser(res.id)
+        .then((res) => {
+          setPayments(res);
+          console.log(res);
+        })
+        .catch((err) => {
+          console.log(err);
+        })
+      })
+      .catch((err) => {
+        console.log(err);
+      }); 
+  }, []);
 
-  const navigate = useNavigate();
+  const getUserName = () => {
+    return sessionStorage.getItem("username");
+  };
 
   const handlePayPayment = (id) => {
-    console.log(`Zatwierdzanie płatności o ID: ${id}`);
-    navigate('/payment-form');
-  };
+    console.log("test")
+  }
 
   return (
     <div className="payment-table-container">
@@ -37,13 +51,12 @@ const PaymentTable = () => {
             <tr key={payment.id}>
               <td>{payment.id}</td>
               <td>{payment.idOrder}</td>
-              <td>{payment.paymentType}</td>
+              <td>{paymentMethodEnum(payment.paymentType)}</td>
               <td>{payment.amount}</td>
               <td>{payment.paymentDate}</td>
-              <td>{payment.status}</td>
+              <td>{statusEnum(payment.status)}</td>
               <td>
-                <button>Edit</button>
-                {payment.status === 'Pending' && <button onClick={() => handlePayPayment(payment.id)}>Pay</button>}
+                {payment.status === 'Pending' ? <button onClick={() => handlePayPayment(payment.id)}>Pay</button> : "no action"}
               </td>
             </tr>
           ))}
