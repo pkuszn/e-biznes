@@ -18,7 +18,8 @@ func main() {
 		AllowMethods: []string{echo.GET, echo.HEAD, echo.PUT, echo.PATCH, echo.POST, echo.DELETE},
 	}))
 
-	db := models.Initialize("product.db")
+	dbURL := "mysql:mysql@tcp(db:3307)/product?parseTime=true"
+	db := models.Initialize(dbURL)
 	models.Migrate(db)
 
 	e.GET("/", func(c echo.Context) error {

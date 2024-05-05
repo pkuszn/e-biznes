@@ -1,14 +1,14 @@
 package models
 
 import (
-	"gorm.io/driver/sqlite"
+	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 )
 
 var DB *gorm.DB
 
-func Initialize(dbName string) *gorm.DB {
-	db, err := gorm.Open(sqlite.Open(dbName), &gorm.Config{SkipDefaultTransaction: true})
+func Initialize(dbURL string) *gorm.DB {
+	db, err := gorm.Open(mysql.Open(dbURL), &gorm.Config{})
 	if err != nil {
 		panic("Failed to connect to database")
 	}
