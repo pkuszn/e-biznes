@@ -62,6 +62,9 @@ func (r *GormPaymentRepository) UpdatePayment(id uint, updatedPayment *dtos.Paym
 	if updatedPayment.PaymentDate != "" {
 		payment.PaymentDate = updatedPayment.PaymentDate
 	}
+	if updatedPayment.Status != 0 {
+		payment.Status = updatedPayment.GetStatusById
+	}
 
 	err = r.DB.Save(payment).Error
 

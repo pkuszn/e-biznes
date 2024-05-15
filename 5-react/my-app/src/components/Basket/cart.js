@@ -65,7 +65,7 @@ const Cart = () => {
                     alert("An error occured");
                 } else {
                     let status = selectedPayNow;
-                    createPayment(order, status)
+                    createPayment(order, status, selectedPaymentMethod)
                         .then((res) => {
                             console.log(res);
                             alert('Products have been purchased.')

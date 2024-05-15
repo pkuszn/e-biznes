@@ -10,10 +10,10 @@ const combiner = (endpoint, args) => {
 
 const deliveryTypeMapper = (name) => {
     switch (name) {
-        case deliveryTypes.courier: {
+        case "Courier": {
             return 1;
         }
-        case deliveryTypes.post: {
+        case "Post": {
             return 2;
         }
         default: {
@@ -24,10 +24,10 @@ const deliveryTypeMapper = (name) => {
 
 const paymentTypeMapper = (name) => {
     switch(name) {
-        case paymentTypes.cashOnDelivery: {
+        case "Cash on delivery": {
             return 1;
         }
-        case paymentTypes.payInAdvance: {
+        case "Pay in advance": {
             return 2;
         }
         default: {
@@ -38,16 +38,16 @@ const paymentTypeMapper = (name) => {
 
 const paymentMethodMapper = (name) => {
     switch(name) {
-        case paymentMethods.creditCard: {
+        case "Credit Card": {
             return 1;
         }
-        case paymentMethods.bankTransfer: {
+        case "Bank Transfer": {
             return 2;
         }
-        case paymentMethods.blik: {
+        case "Blik": {
             return 3;
         }
-        case paymentMethods.payPal: {
+        case "PayPal": {
             return 4;
         }
         default: {

@@ -18,16 +18,16 @@ const fetchPaymentByUser = async(id_user) => {
     }
 }
 
-const createPayment = async(order, status) => {
+const createPayment = async(order, status, paymentMethod) => {
     let endpoint = combiner(api.payment);
     try {
         const data = {
             "id": 0,
             "idOrder": order.id,
-            "paymentType": order.paymentType,
+            "paymentType": paymentMethod,
             "amount": order.amount,
-            "paymentDate": order.paymentDate,
-            "status": status
+            "paymentDate": order.purchaseDate,
+            "status": status === true ? 1 : 2
         };
 
         let response = await axios.post(endpoint, data);
@@ -39,7 +39,28 @@ const createPayment = async(order, status) => {
     }
 }
 
+const updatePayment = async(payment) => {
+    let endpoint = combiner(api.payment, payment.id);
+    try {
+        const data = {
+            "id": payment.id,
+            "idOrder": payment.idOrder,
+            "paymentType": payment.paymentType,
+            "amount": payment.amount,
+            "paymentDate": payment.paymentDate,
+            "status": 1
+        };
+        let response = await axios.put(endpoint, data);
+        if (response.data) {
+            return response.data;
+        }
+    } catch(error) {
+        console.error("Error during updating payment");
+    }
+}
+
 export {
     fetchPaymentByUser,
-    createPayment
+    createPayment,
+    updatePayment
 }

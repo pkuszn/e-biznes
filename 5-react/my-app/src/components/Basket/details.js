@@ -84,13 +84,13 @@ const Details = ({ user, deliveryTypes, paymentTypes, paymentMethods, totalPrice
             <div style={{ width: "48%" }}>
                 <h2>Payment and Delivery</h2>
                 <div>
-                    <label htmlFor="paymentMethod">Payment Method:</label>
+                    <label htmlFor="paymentMethod">Payment Type:</label>
                     <select
                         id="selectOptions"
                         value={paymentTypeOption}
                         onChange={handlePaymentTypeOption}
                     >
-                        <option value="">Select Payment Method</option>
+                        <option value="">Select Payment Type</option>
                         {paymentTypes.map((option) => (
                             <option key={option.id} value={option.name}>
                                 {option.name}
