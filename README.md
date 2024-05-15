@@ -26,8 +26,15 @@
 4.0 - [3e0ce03c2717bc7c4a38a813d172ad95d1854321](https://github.com/pkuszn/e-biznes/tree/3e0ce03c2717bc7c4a38a813d172ad95d1854321)
 
 <b>Task no.5</b> <i>Frontend React.JS</i>
+
+5.0 - [9a5ebfd4235465980c789ea67667c3baf6f830bb](https://github.com/pkuszn/e-biznes/tree/9a5ebfd4235465980c789ea67667c3baf6f830bb)
+
 <b>Task no.6</b> <i>Tests</i>
 <b>Task no.7</b> <i>Sonar</i>
+<b>Task no.8</b> <i>OAuth2</i>
+<b>Task no.9</b> <i>ChatGPT bot</i>
+<b>Task no.10</b> <i>Chmura/CI</i>
+
 
 ## 
 
@@ -39,6 +46,9 @@
 | 2 | Scala Play | :white_check_mark: |
 | 3 | Kotlin | :white_check_mark: |
 | 4 | Go | :white_check_mark: |
-| 5 | Frontend React.JS | :soon: |
+| 5 | Frontend React.JS | :white_check_mark: |
 | 6 | Tests | :soon: |
 | 7 | Sonar | :soon: |
+| 8 | OAuth2 | :soon: |
+| 9 | ChatGPT bot | :soon: |
+| 10 | Chmura/CI | :soon: |
