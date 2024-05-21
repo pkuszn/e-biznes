@@ -63,13 +63,12 @@ func (r *GormPaymentRepository) UpdatePayment(id uint, updatedPayment *dtos.Paym
 		payment.PaymentDate = updatedPayment.PaymentDate
 	}
 	if updatedPayment.Status != 0 {
-		payment.Status = updatedPayment.GetStatusById
+		payment.Status = updatedPayment.Status
 	}
 
 	err = r.DB.Save(payment).Error
 
 	return payment, err
-
 }
 
 func (r *GormPaymentRepository) DeletePayment(id uint) error {

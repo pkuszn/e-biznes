@@ -1,6 +1,7 @@
 package repository
 
 import (
+	"go-rest-api/dtos"
 	"go-rest-api/models"
 )
 
@@ -9,4 +10,5 @@ type UserRepository interface {
 	GetUserById(id uint) (*models.User, error)
 	FindByName(name string) (*models.User, error)
 	CheckUser(name string, password string) (*models.User, error)
+	CreateUser(user *dtos.User) error
 }

@@ -4,6 +4,7 @@ import Basket from "../pages/basket";
 import Login from "../pages/login";
 import Products from "../pages/products";
 import Payment from "../pages/payment"
+import Register from "./Register/register";
 
 const AppRouter = () => {
     return (
@@ -16,6 +17,7 @@ const AppRouter = () => {
                     <Route path="/products/" element={<Products />} />
                     <Route path="/products/:idCategory" element={<Products />} />
                     <Route path="/payments" element={<Payment />} />
+                    <Route path="/register" element={<Register/>} />
                 </Routes>
             </BrowserRouter>
         </div>

@@ -2,6 +2,7 @@ package repository
 
 import (
 	"errors"
+	"go-rest-api/dtos"
 	"go-rest-api/models"
 
 	"gorm.io/gorm"
@@ -56,4 +57,16 @@ func (r *GormUserRepository) CheckUser(name string, password string) (*models.Us
 	}
 
 	return &user, nil
+}
+
+func (r *GormUserRepository) CreateUser(user *dtos.User) error {
+	newUser := models.User{
+		ID:          user.ID,
+		Name:        user.Name,
+		Surname:     user.Surname,
+		Password:    user.Password,
+		Address:     user.Address,
+		CreatedDate: user.CreatedDate,
+	}
+	return r.DB.Create(&newUser).Error
 }

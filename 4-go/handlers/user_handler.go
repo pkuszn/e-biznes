@@ -17,6 +17,21 @@ func NewUserHandler(repo repository.UserRepository) *UserHandler {
 	return &UserHandler{Repo: repo}
 }
 
+func (h *UserHandler) CreateUser(c echo.Context) error {
+	user := new(dtos.User)
+	if err := c.Bind(user); err != nil {
+		log.Error(err.Error())
+		return err
+	}
+
+	if err := h.Repo.CreateUser(user); err != nil {
+		log.Error("Failed to create the user. ", err.Error())
+		return c.JSON(http.StatusInternalServerError, "Failed to create the user.")
+	}
+
+	return c.JSON(http.StatusCreated, user)
+}
+
 func (h *UserHandler) GetUser(c echo.Context) error {
 	users, err := h.Repo.GetAllUsers()
 	if err != nil {

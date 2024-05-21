@@ -43,7 +43,36 @@ const fetchUser = async(name) => {
     }
 }
 
+const registerUser = async(user) => {
+    if (user == null || user == undefined) {
+        console.log(`user is empty or null`);
+        return;
+    }
+
+    let endpoint = combiner(api.user);
+    try {
+        const data = {
+            "name": user.name,
+            "surname": user.surname,
+            "password": user.password,
+            "address": user.address,
+            "createdDate": user.createdDate
+        }
+        let response = await axios.post(endpoint, data);
+        console.log(response);
+        if (response.data) {
+            let u = response.data;
+            return new User(u.id, u.name, u.surname, u.address, u.createdDate, u.password);
+        } else {
+            return {};
+        }
+    } catch (error) {
+        console.error("Error during creating user.", error);
+    }
+}
+
 export {
     checkUser,
-    fetchUser
+    fetchUser,
+    registerUser
 }

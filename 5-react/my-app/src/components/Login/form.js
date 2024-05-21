@@ -20,6 +20,11 @@ export const Form = () => {
             });
     };
 
+    const registerHandler = (event) => {
+        event.preventDefault();
+        window.location.replace(`/register`);
+    };
+
     return (
         <div className="login-container">
             <form className="login-form">
@@ -31,6 +36,12 @@ export const Form = () => {
                 <button type="submit" onClick={userHandler}>
                     Login
                 </button>
+                <div className="register-info">
+                    <p>If you don't have an account, you can create one by clicking the button below:</p>
+                    <button type="button" onClick={registerHandler} className="register-button">
+                        Register
+                    </button>
+                </div>
             </form>
         </div>
     );
