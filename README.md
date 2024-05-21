@@ -29,9 +29,13 @@
 
 5.0 - [9a5ebfd4235465980c789ea67667c3baf6f830bb](https://github.com/pkuszn/e-biznes/tree/9a5ebfd4235465980c789ea67667c3baf6f830bb)
 
+
 <b>Task no.6</b> <i>Tests</i>
 <b>Task no.7</b> <i>Sonar</i>
 <b>Task no.8</b> <i>OAuth2</i>
+
+3.5 [7e721ba1f48cff8a5223237e282b6914bbe83c87](https://github.com/pkuszn/e-biznes/tree/7e721ba1f48cff8a5223237e282b6914bbe83c87)
+
 <b>Task no.9</b> <i>ChatGPT bot</i>
 <b>Task no.10</b> <i>Chmura/CI</i>
 
