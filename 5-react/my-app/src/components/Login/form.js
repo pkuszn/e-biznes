@@ -18,11 +18,38 @@ export const Form = () => {
             .catch((err) => {
                 alert(err.data);
             });
+
+        const query = new URLSearchParams(window.location.search);
+        const token = query.get('token');
+        const queryName = query.get('user');
+        if (token) {
+            sessionStorage.setItem('token', token);
+            sessionStorage.setItem('username', queryName);
+            fetchUser(token);
+        }
     };
 
     const registerHandler = (event) => {
         event.preventDefault();
         window.location.replace(`/register`);
+    };
+
+    //TODO
+    const fetchUser = async (token) => {
+        try {
+          const response = await axios.get('http://localhost:1323/api/userinfo', {
+            headers: {
+              'Authorization': `Bearer ${token}`
+            }
+          });
+          setUser(response.data);
+        } catch (error) {
+          console.error('Error fetching user', error);
+        }
+      };
+
+    const login = () => {
+        window.location.href = "http://localhost:1323/auth/github";
     };
 
     return (
@@ -36,6 +63,7 @@ export const Form = () => {
                 <button type="submit" onClick={userHandler}>
                     Login
                 </button>
+                <button onClick={login}>Login with GitHub</button>
                 <div className="register-info">
                     <p>If you don't have an account, you can create one by clicking the button below:</p>
                     <button type="button" onClick={registerHandler} className="register-button">
