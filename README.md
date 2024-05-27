@@ -32,6 +32,9 @@
 
 <b>Task no.6</b> <i>Tests</i>
 <b>Task no.7</b> <i>Sonar</i>
+
+3.5 [7ed4b933f66ff295ffdc18c40b4e9fae43db4fb0](https://github.com/pkuszn/e-biznes/tree/7ed4b933f66ff295ffdc18c40b4e9fae43db4fb0)
+
 <b>Task no.8</b> <i>OAuth2</i>
 
 3.5 [7e721ba1f48cff8a5223237e282b6914bbe83c87](https://github.com/pkuszn/e-biznes/tree/7e721ba1f48cff8a5223237e282b6914bbe83c87)
