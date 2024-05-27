@@ -11,6 +11,7 @@ import (
 )
 
 const invalidProductId = "Invalid product ID: "
+const productNotFound = "Product not found"
 
 type ProductHandler struct {
 	Repo repository.ProductRepository
@@ -55,8 +56,8 @@ func (h *ProductHandler) GetProductById(c echo.Context) error {
 
 	product, err := h.Repo.GetProductById(id)
 	if err != nil {
-		log.Error("Product not found ", err.Error())
-		return c.JSON(http.StatusNotFound, "Product not found")
+		log.Error(productNotFound, err.Error())
+		return c.JSON(http.StatusNotFound, productNotFound)
 	}
 
 	return c.JSON(http.StatusOK, product)
@@ -91,8 +92,8 @@ func (h *ProductHandler) DeleteProduct(c echo.Context) error {
 	}
 
 	if err := h.Repo.DeleteProduct(id); err != nil {
-		log.Error("Product not found ", err.Error())
-		return c.JSON(http.StatusNotFound, "Product not found")
+		log.Error(productNotFound, err.Error())
+		return c.JSON(http.StatusNotFound, productNotFound)
 	}
 
 	return c.NoContent(http.StatusNoContent)
@@ -108,7 +109,7 @@ func (h *ProductHandler) GetProductByCategory(c echo.Context) error {
 	products, err := h.Repo.GetProductByCategory(id_category)
 	if err != nil {
 		log.Error("Cannot find product by given id category ", err.Error())
-		return c.JSON(http.StatusNotFound, "Product not found")
+		return c.JSON(http.StatusNotFound, productNotFound)
 	}
 
 	return c.JSON(http.StatusOK, products)

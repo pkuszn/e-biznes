@@ -65,7 +65,7 @@ func (h *CategoryHandler) GetCategoryById(c echo.Context) error {
 func (h *CategoryHandler) UpdateCategory(c echo.Context) error {
 	id, err := getIntId(c)
 	if err != nil {
-		log.Error("Invalid category ID: ", err.Error())
+		log.Error(invalidCategoryId, err.Error())
 		return c.JSON(http.StatusBadRequest, invalidCategoryId)
 	}
 	var updatedCategory dtos.Category
@@ -87,7 +87,7 @@ func (h *CategoryHandler) UpdateCategory(c echo.Context) error {
 func (h *CategoryHandler) DeleteCategory(c echo.Context) error {
 	id, err := getIntId(c)
 	if err != nil {
-		log.Error("Invalid category ID: ", err.Error())
+		log.Error(invalidCategoryId, err.Error())
 		return c.JSON(http.StatusBadRequest, "Invalid category ID")
 	}
 
