@@ -78,9 +78,9 @@ func (r *GormProductRepository) DeleteProduct(id uint) error {
 	return r.DB.Delete(&models.Product{}, id).Error
 }
 
-func (r *GormProductRepository) GetProductByCategory(id_category uint) ([]models.Product, error) {
+func (r *GormProductRepository) GetProductByCategory(idCategory uint) ([]models.Product, error) {
 	var products []models.Product
-	err := r.DB.Where("category = ?", id_category).Find(&products).Error
+	err := r.DB.Where("category = ?", idCategory).Find(&products).Error
 	if err != nil {
 		return nil, err
 	}

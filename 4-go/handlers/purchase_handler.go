@@ -10,6 +10,8 @@ import (
 	"github.com/labstack/gommon/log"
 )
 
+const invalidPurchaseId = "Invalid purchase ID: "
+
 type PurchaseHandler struct {
 	Repo repository.PurchaseRepository
 }
@@ -45,8 +47,8 @@ func (h *PurchaseHandler) GetPurchase(c echo.Context) error {
 func (h *PurchaseHandler) GetPurchaseById(c echo.Context) error {
 	id, err := getIntId(c)
 	if err != nil {
-		log.Error("Invalid purchase ID: ", err.Error())
-		return c.JSON(http.StatusBadRequest, "Invalid purchase ID")
+		log.Error(invalidPurchaseId, err.Error())
+		return c.JSON(http.StatusBadRequest, invalidPurchaseId)
 	}
 
 	purchase, err := h.Repo.GetPurchaseById(id)
@@ -61,8 +63,8 @@ func (h *PurchaseHandler) GetPurchaseById(c echo.Context) error {
 func (h *PurchaseHandler) UpdatePurchase(c echo.Context) error {
 	id, err := getIntId(c)
 	if err != nil {
-		log.Error("Invalid purchase ID: ", err.Error())
-		return c.JSON(http.StatusBadRequest, "Invalid purchase ID")
+		log.Error(invalidPurchaseId, err.Error())
+		return c.JSON(http.StatusBadRequest, invalidPurchaseId)
 	}
 	var updatedPurchase dtos.Purchase
 	if err := c.Bind(&updatedPurchase); err != nil {
@@ -82,8 +84,8 @@ func (h *PurchaseHandler) UpdatePurchase(c echo.Context) error {
 func (h *PurchaseHandler) DeletePurchase(c echo.Context) error {
 	id, err := getIntId(c)
 	if err != nil {
-		log.Error("Invalid purchase ID: ", err.Error())
-		return c.JSON(http.StatusBadRequest, "Invalid purchase ID")
+		log.Error(invalidPurchaseId, err.Error())
+		return c.JSON(http.StatusBadRequest, invalidPurchaseId)
 	}
 
 	if err := h.Repo.DeletePurchase(id); err != nil {

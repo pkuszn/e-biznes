@@ -10,6 +10,8 @@ import (
 	"github.com/labstack/gommon/log"
 )
 
+const invalidCategoryId = "Invalid category ID: "
+
 type CategoryHandler struct {
 	Repo repository.CategoryRepository
 }
@@ -46,8 +48,8 @@ func (h *CategoryHandler) GetCategory(c echo.Context) error {
 func (h *CategoryHandler) GetCategoryById(c echo.Context) error {
 	id, err := getIntId(c)
 	if err != nil {
-		log.Error("Invalid category ID: ", err.Error())
-		return c.JSON(http.StatusBadRequest, "Invalid category ID")
+		log.Error(invalidCategoryId, err.Error())
+		return c.JSON(http.StatusBadRequest, invalidCategoryId)
 	}
 
 	category, err := h.Repo.GetCategoryById(id)
@@ -64,7 +66,7 @@ func (h *CategoryHandler) UpdateCategory(c echo.Context) error {
 	id, err := getIntId(c)
 	if err != nil {
 		log.Error("Invalid category ID: ", err.Error())
-		return c.JSON(http.StatusBadRequest, "Invalid category ID")
+		return c.JSON(http.StatusBadRequest, invalidCategoryId)
 	}
 	var updatedCategory dtos.Category
 	if err := c.Bind(&updatedCategory); err != nil {

@@ -3,21 +3,24 @@ import { fetchCategories } from "../../services/categoryService.js";
 import "./style.css";
 
 const Dropdown = () => {
-    const [isExpanded, setExpanded] = useState(false);
+    const [isExpanded, setIsExpanded] = useState(false);
     const [options, setOptions] = useState([]);
 
     useEffect(() => {
-        fetchCategories()
-            .then((res) => {
-                setOptions(res);
-            })
-            .catch((err) => {
+        const loadCategories = async () => {
+            try {
+                const categories = await fetchCategories();
+                setOptions(categories);
+            } catch (error) {
+                console.error("Error fetching categories:", error);
                 setOptions([]);
-            });
+            }
+        };
+        loadCategories();
     }, []);
 
     const handleToggle = () => {
-        setExpanded(!isExpanded);
+        setIsExpanded(!isExpanded);
     };
 
     const handleItemClick = (value) => {
@@ -27,14 +30,17 @@ const Dropdown = () => {
 
     return (
         <div className={`dropdown-container ${isExpanded ? "expanded" : ""}`}>
-            <div className="dropdown-toggle" onMouseEnter={handleToggle}>
+            <div
+                className="dropdown-toggle"
+                onMouseEnter={handleToggle}
+            >
                 Category
             </div>
             {isExpanded && (
                 <ul className="dropdown-list">
                     {options.map((option) => (
                         <li
-                            key={option.name}
+                            key={option.id}
                             onClick={() => handleItemClick(option.id)}
                         >
                             {option.name}
@@ -45,4 +51,5 @@ const Dropdown = () => {
         </div>
     );
 };
+
 export default Dropdown;

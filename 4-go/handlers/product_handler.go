@@ -10,6 +10,8 @@ import (
 	"github.com/labstack/gommon/log"
 )
 
+const invalidProductId = "Invalid product ID: "
+
 type ProductHandler struct {
 	Repo repository.ProductRepository
 }
@@ -47,8 +49,8 @@ func (h *ProductHandler) GetProduct(c echo.Context) error {
 func (h *ProductHandler) GetProductById(c echo.Context) error {
 	id, err := getIntId(c)
 	if err != nil {
-		log.Error("Invalid product ID: ", err.Error())
-		return c.JSON(http.StatusBadRequest, "Invalid product ID")
+		log.Error(invalidProductId, err.Error())
+		return c.JSON(http.StatusBadRequest, invalidProductId)
 	}
 
 	product, err := h.Repo.GetProductById(id)
@@ -63,8 +65,8 @@ func (h *ProductHandler) GetProductById(c echo.Context) error {
 func (h *ProductHandler) UpdateProduct(c echo.Context) error {
 	id, err := getIntId(c)
 	if err != nil {
-		log.Error("Invalid product ID: ", err.Error())
-		return c.JSON(http.StatusBadRequest, "Invalid product ID")
+		log.Error(invalidProductId, err.Error())
+		return c.JSON(http.StatusBadRequest, invalidProductId)
 	}
 	var updatedProduct dtos.Product
 	if err := c.Bind(&updatedProduct); err != nil {
@@ -84,8 +86,8 @@ func (h *ProductHandler) UpdateProduct(c echo.Context) error {
 func (h *ProductHandler) DeleteProduct(c echo.Context) error {
 	id, err := getIntId(c)
 	if err != nil {
-		log.Error("Invalid product ID: ", err.Error())
-		return c.JSON(http.StatusBadRequest, "Invalid product ID")
+		log.Error(invalidProductId, err.Error())
+		return c.JSON(http.StatusBadRequest, invalidProductId)
 	}
 
 	if err := h.Repo.DeleteProduct(id); err != nil {

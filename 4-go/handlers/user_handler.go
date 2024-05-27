@@ -9,6 +9,8 @@ import (
 	"github.com/labstack/gommon/log"
 )
 
+const userNotFound = "user not found "
+
 type UserHandler struct {
 	Repo repository.UserRepository
 }
@@ -50,8 +52,8 @@ func (h *UserHandler) GetUserById(c echo.Context) error {
 
 	user, err := h.Repo.GetUserById(id)
 	if err != nil {
-		log.Error("user not found ", err.Error())
-		return c.JSON(http.StatusNotFound, "user not found")
+		log.Error(userNotFound, err.Error())
+		return c.JSON(http.StatusNotFound, userNotFound)
 	}
 
 	return c.JSON(http.StatusOK, user)
@@ -66,8 +68,8 @@ func (h *UserHandler) FindByName(c echo.Context) error {
 
 	user, err := h.Repo.FindByName(userName.Name)
 	if err != nil {
-		log.Error("User not found", err.Error())
-		return c.JSON(http.StatusBadRequest, "User not found")
+		log.Error(userNotFound, err.Error())
+		return c.JSON(http.StatusBadRequest, userNotFound)
 	}
 
 	return c.JSON(http.StatusOK, user)
@@ -81,8 +83,8 @@ func (h *UserHandler) CheckUser(c echo.Context) error {
 	}
 	user, err := h.Repo.CheckUser(userNamePassword.Name, userNamePassword.Password)
 	if err != nil {
-		log.Error("User not found", err.Error())
-		return c.JSON(http.StatusBadRequest, "User not found")
+		log.Error(userNotFound, err.Error())
+		return c.JSON(http.StatusBadRequest, userNotFound)
 	}
 
 	return c.JSON(http.StatusOK, user)

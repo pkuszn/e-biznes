@@ -16,17 +16,17 @@ func getIntId(c echo.Context) (uint, error) {
 }
 
 func getUserId(c echo.Context) (uint, error) {
-	id_user_str := c.Param("id_user")
-	id_user, err := strconv.Atoi(id_user_str)
+	idUserStr := c.Param("id_user")
+	idUser, err := strconv.Atoi(idUserStr)
 	if err != nil {
 		return 0, err
 	}
-	return uint(id_user), nil
+	return uint(idUser), nil
 }
 
 func getCategoryId(c echo.Context) (uint, error) {
-	id_category_str := c.Param("id_category")
-	id_category, err := strconv.Atoi(id_category_str)
+	idCategoryStr := c.Param("id_category")
+	id_category, err := strconv.Atoi(idCategoryStr)
 	if err != nil {
 		return 0, err
 	}

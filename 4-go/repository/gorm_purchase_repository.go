@@ -87,9 +87,9 @@ func (r *GormPurchaseRepository) MakeOrder(order []dtos.Purchase) error {
 	return r.DB.Create(&newPurchases).Error
 }
 
-func (r *GormPurchaseRepository) GetPurchaseByUser(id_user uint) ([]models.Purchase, error) {
+func (r *GormPurchaseRepository) GetPurchaseByUser(idUser uint) ([]models.Purchase, error) {
 	var purchases []models.Purchase
-	err := r.DB.Where("id_user = ?", id_user).Find(&purchases).Error
+	err := r.DB.Where("id_user = ?", idUser).Find(&purchases).Error
 	if err != nil {
 		return nil, err
 	}

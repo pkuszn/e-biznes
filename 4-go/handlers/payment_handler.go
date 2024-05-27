@@ -10,6 +10,8 @@ import (
 	"github.com/labstack/gommon/log"
 )
 
+const invalidPaymentId = "Invalid payment ID: "
+
 type PaymentHandler struct {
 	Repo repository.PaymentRepository
 }
@@ -45,8 +47,8 @@ func (h *PaymentHandler) GetPayment(c echo.Context) error {
 func (h *PaymentHandler) GetPaymentById(c echo.Context) error {
 	id, err := getIntId(c)
 	if err != nil {
-		log.Error("Invalid payment ID: ", err.Error())
-		return c.JSON(http.StatusBadRequest, "Invalid payment ID")
+		log.Error(invalidPaymentId, err.Error())
+		return c.JSON(http.StatusBadRequest, invalidPaymentId)
 	}
 
 	payment, err := h.Repo.GetPaymentById(id)
@@ -61,8 +63,8 @@ func (h *PaymentHandler) GetPaymentById(c echo.Context) error {
 func (h *PaymentHandler) UpdatePayment(c echo.Context) error {
 	id, err := getIntId(c)
 	if err != nil {
-		log.Error("Invalid payment ID: ", err.Error())
-		return c.JSON(http.StatusBadRequest, "Invalid payment ID")
+		log.Error(invalidPaymentId, err.Error())
+		return c.JSON(http.StatusBadRequest, invalidPaymentId)
 	}
 	var updatedPayment dtos.Payment
 	if err := c.Bind(&updatedPayment); err != nil {
@@ -82,8 +84,8 @@ func (h *PaymentHandler) UpdatePayment(c echo.Context) error {
 func (h *PaymentHandler) DeletePayment(c echo.Context) error {
 	id, err := getIntId(c)
 	if err != nil {
-		log.Error("Invalid payment ID: ", err.Error())
-		return c.JSON(http.StatusBadRequest, "Invalid payment ID")
+		log.Error(invalidPaymentId, err.Error())
+		return c.JSON(http.StatusBadRequest, invalidPaymentId)
 	}
 
 	if err := h.Repo.DeletePayment(id); err != nil {

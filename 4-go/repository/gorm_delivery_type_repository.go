@@ -15,19 +15,19 @@ func NewGormDeliveryTypeRepository(db *gorm.DB) *GormDeliveryTypeRepository {
 }
 
 func (r *GormDeliveryTypeRepository) GetAllDeliveryTypes() ([]models.DeliveryType, error) {
-	var delivery_types []models.DeliveryType
-	err := r.DB.Find(&delivery_types).Error
+	var deliveryTypes []models.DeliveryType
+	err := r.DB.Find(&deliveryTypes).Error
 	if err != nil {
 		return nil, err
 	}
-	return delivery_types, nil
+	return deliveryTypes, nil
 }
 
 func (r *GormDeliveryTypeRepository) GetDeliveryTypeById(id uint) (*models.DeliveryType, error) {
-	var delivery_type models.DeliveryType
-	err := r.DB.First(&delivery_type, id).Error
+	var deliveryType models.DeliveryType
+	err := r.DB.First(&deliveryType, id).Error
 	if err != nil {
 		return nil, err
 	}
-	return &delivery_type, nil
+	return &deliveryType, nil
 }

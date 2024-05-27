@@ -1,4 +1,4 @@
-import {api, category, deliveryTypes, statuses, paymentMethods, paymentTypes} from './const.js'
+import {api, category, statuses, paymentMethods} from './const.js'
 
 const combiner = (endpoint, args) => {
     let address = api.address;

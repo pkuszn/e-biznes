@@ -80,18 +80,18 @@ func (r *GormPaymentRepository) FindByUser(id uint) ([]models.Payment, error) {
 	var payments []models.Payment
 	var orderIDs []int64
 
-	err_order := r.DB.Where("id_user = ?", id).Find(&orders).Error
-	if err_order != nil {
-		return nil, err_order
+	errOrder := r.DB.Where("id_user = ?", id).Find(&orders).Error
+	if errOrder != nil {
+		return nil, errOrder
 	}
 
 	for _, order := range orders {
 		orderIDs = append(orderIDs, order.ID)
 	}
 
-	err_payment := r.DB.Where("id_order IN (?)", orderIDs).Find(&payments).Error
-	if err_payment != nil {
-		return nil, err_payment
+	errPayment := r.DB.Where("id_order IN (?)", orderIDs).Find(&payments).Error
+	if errPayment != nil {
+		return nil, errPayment
 	}
 	return payments, nil
 }

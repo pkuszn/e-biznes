@@ -15,19 +15,19 @@ func NewGormPaymentTypeRepository(db *gorm.DB) *GormPaymentTypeRepository {
 }
 
 func (r *GormPaymentTypeRepository) GetAllPaymentTypes() ([]models.PaymentType, error) {
-	var payment_types []models.PaymentType
-	err := r.DB.Find(&payment_types).Error
+	var paymentTypes []models.PaymentType
+	err := r.DB.Find(&paymentTypes).Error
 	if err != nil {
 		return nil, err
 	}
-	return payment_types, nil
+	return paymentTypes, nil
 }
 
 func (r *GormPaymentTypeRepository) GetPaymentTypeById(id uint) (*models.PaymentType, error) {
-	var payment_type models.PaymentType
-	err := r.DB.First(&payment_type, id).Error
+	var paymentType models.PaymentType
+	err := r.DB.First(&paymentType, id).Error
 	if err != nil {
 		return nil, err
 	}
-	return &payment_type, nil
+	return &paymentType, nil
 }

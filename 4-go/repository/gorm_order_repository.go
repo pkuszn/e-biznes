@@ -77,9 +77,9 @@ func (r *GormOrderRepository) DeleteOrder(id uint) error {
 	return r.DB.Delete(&models.Order{}, id).Error
 }
 
-func (r *GormOrderRepository) GetOrderByUser(id_user uint) ([]models.Order, error) {
+func (r *GormOrderRepository) GetOrderByUser(idUser uint) ([]models.Order, error) {
 	var order []models.Order
-	err := r.DB.Where("id_user = ?", id_user).Find(&order).Error
+	err := r.DB.Where("id_user = ?", idUser).Find(&order).Error
 	if err != nil {
 		return nil, err
 	}

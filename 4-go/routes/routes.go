@@ -9,6 +9,8 @@ import (
 )
 
 func SetupRoutes(g *echo.Group) {
+	const userId = "/user/:id_user"
+
 	productRepo := repository.NewGormProductRepository(models.DB)
 	productHandler := handlers.NewProductHandler(productRepo)
 
@@ -40,7 +42,7 @@ func SetupRoutes(g *echo.Group) {
 	purchaseGroup.PUT("/:id", purchaseHandler.UpdatePurchase)
 	purchaseGroup.DELETE("/:id", purchaseHandler.DeletePurchase)
 	purchaseGroup.POST("/order", purchaseHandler.MakeOrder)
-	purchaseGroup.GET("/user/:id_user", purchaseHandler.GetPurchaseByUser)
+	purchaseGroup.GET(userId, purchaseHandler.GetPurchaseByUser)
 
 	userRepo := repository.NewGormUserRepository(models.DB)
 	userHandler := handlers.NewUserHandler(userRepo)
@@ -75,7 +77,7 @@ func SetupRoutes(g *echo.Group) {
 	paymentGroup.POST("", paymentHandler.CreatePayment)
 	paymentGroup.PUT("/:id", paymentHandler.UpdatePayment)
 	paymentGroup.DELETE("/:id", paymentHandler.DeletePayment)
-	paymentGroup.GET("/user/:id_user", paymentHandler.FindByUser)
+	paymentGroup.GET(userId, paymentHandler.FindByUser)
 
 	statusRepo := repository.NewGormStatusRepository(models.DB)
 	statusHandler := handlers.NewStatusHandler(statusRepo)
@@ -101,5 +103,5 @@ func SetupRoutes(g *echo.Group) {
 	orderGroup.PUT("/:id", orderHandler.UpdateOrder)
 	orderGroup.DELETE("/:id", orderHandler.DeleteOrder)
 	orderGroup.POST("/make", orderHandler.MakeOrder)
-	orderGroup.GET("/user/:id_user", orderHandler.GetOrderByUser)
+	orderGroup.GET(userId, orderHandler.GetOrderByUser)
 }

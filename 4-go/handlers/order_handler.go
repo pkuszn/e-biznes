@@ -10,6 +10,8 @@ import (
 	"github.com/labstack/gommon/log"
 )
 
+const invalidOrderId = "Invalid order ID: "
+
 type OrderHandler struct {
 	Repo repository.OrderRepository
 }
@@ -45,8 +47,8 @@ func (h *OrderHandler) GetOrder(c echo.Context) error {
 func (h *OrderHandler) GetOrderById(c echo.Context) error {
 	id, err := getIntId(c)
 	if err != nil {
-		log.Error("Invalid order ID: ", err.Error())
-		return c.JSON(http.StatusBadRequest, "Invalid order ID")
+		log.Error(invalidOrderId, err.Error())
+		return c.JSON(http.StatusBadRequest, invalidOrderId)
 	}
 
 	order, err := h.Repo.GetOrderById(id)
@@ -61,8 +63,8 @@ func (h *OrderHandler) GetOrderById(c echo.Context) error {
 func (h *OrderHandler) UpdateOrder(c echo.Context) error {
 	id, err := getIntId(c)
 	if err != nil {
-		log.Error("Invalid order ID: ", err.Error())
-		return c.JSON(http.StatusBadRequest, "Invalid order ID")
+		log.Error(invalidOrderId, err.Error())
+		return c.JSON(http.StatusBadRequest, invalidOrderId)
 	}
 	var updatedorder dtos.Order
 	if err := c.Bind(&updatedorder); err != nil {
@@ -82,8 +84,8 @@ func (h *OrderHandler) UpdateOrder(c echo.Context) error {
 func (h *OrderHandler) DeleteOrder(c echo.Context) error {
 	id, err := getIntId(c)
 	if err != nil {
-		log.Error("Invalid order ID: ", err.Error())
-		return c.JSON(http.StatusBadRequest, "Invalid order ID")
+		log.Error(invalidOrderId, err.Error())
+		return c.JSON(http.StatusBadRequest, invalidOrderId)
 	}
 
 	if err := h.Repo.DeleteOrder(id); err != nil {
