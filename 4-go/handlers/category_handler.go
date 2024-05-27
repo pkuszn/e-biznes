@@ -98,3 +98,5 @@ func (h *CategoryHandler) DeleteCategory(c echo.Context) error {
 
 	return c.NoContent(http.StatusNoContent)
 }
+
+//test
