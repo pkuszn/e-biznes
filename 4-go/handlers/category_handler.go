@@ -51,14 +51,14 @@ func (h *CategoryHandler) GetCategory(c echo.Context) error {
 }
 
 // GetCategoryByID retrieves a category by its ID.
-func (h *CategoryHandler) GetCategoryById(c echo.Context) error {
+func (h *CategoryHandler) GetCategoryByID(c echo.Context) error {
 	id, err := getIntId(c)
 	if err != nil {
 		log.Error(invalidCategoryID, err.Error())
 		return c.JSON(http.StatusBadRequest, invalidCategoryID)
 	}
 
-	category, err := h.Repo.GetCategoryById(id)
+	category, err := h.Repo.GetCategoryByID(id)
 	if err != nil {
 		log.Error("Category not found ", err.Error())
 		return c.JSON(http.StatusNotFound, "Category not found")

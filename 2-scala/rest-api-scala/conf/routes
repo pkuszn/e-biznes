@@ -16,7 +16,7 @@ PUT     /product/:id                controllers.ProductController.updateProduct(
 DELETE  /product/:id                controllers.ProductController.deleteProduct(id: Long)
 
 GET     /categories                 controllers.CategoryController.getAllCategories()
-GET     /category/:id               controllers.CategoryController.getCategoryById(id: Int)
+GET     /category/:id               controllers.CategoryController.GetCategoryByID(id: Int)
 POST    /category                   controllers.CategoryController.addCategory()
 PUT     /category/:id               controllers.CategoryController.updateCategory(id: Int)
 DELETE  /category/:id               controllers.CategoryController.deleteCategory(id: Int)

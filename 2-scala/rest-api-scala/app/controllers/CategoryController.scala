@@ -32,7 +32,7 @@ class CategoryController @Inject()(val controllerComponents: ControllerComponent
     Ok(Json.toJson(categories))
   }
 
-  def getCategoryById(id: Int) = Action {
+  def GetCategoryByID(id: Int) = Action {
     categories.find(_.id == id) match {
       case Some(category) => Ok(Json.toJson(category))
       case None => NotFound

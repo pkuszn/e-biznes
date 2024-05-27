@@ -8,8 +8,9 @@ import (
 	"github.com/labstack/echo/v4"
 )
 
+// SetupRoutes initializes the routes for the application.
 func SetupRoutes(g *echo.Group) {
-	const userId = "/user/:id_user"
+	const userID = "/user/:id_user"
 
 	productRepo := repository.NewGormProductRepository(models.DB)
 	productHandler := handlers.NewProductHandler(productRepo)
@@ -27,7 +28,7 @@ func SetupRoutes(g *echo.Group) {
 
 	categoryGroup := g.Group("/category")
 	categoryGroup.GET("", categoryHandler.GetCategory)
-	categoryGroup.GET("/:id", categoryHandler.GetCategoryById)
+	categoryGroup.GET("/:id", categoryHandler.GetCategoryByID)
 	categoryGroup.POST("", categoryHandler.CreateCategory)
 	categoryGroup.PUT("/:id", categoryHandler.UpdateCategory)
 	categoryGroup.DELETE("/:id", categoryHandler.DeleteCategory)
@@ -42,7 +43,7 @@ func SetupRoutes(g *echo.Group) {
 	purchaseGroup.PUT("/:id", purchaseHandler.UpdatePurchase)
 	purchaseGroup.DELETE("/:id", purchaseHandler.DeletePurchase)
 	purchaseGroup.POST("/order", purchaseHandler.MakeOrder)
-	purchaseGroup.GET(userId, purchaseHandler.GetPurchaseByUser)
+	purchaseGroup.GET(userID, purchaseHandler.GetPurchaseByUser)
 
 	userRepo := repository.NewGormUserRepository(models.DB)
 	userHandler := handlers.NewUserHandler(userRepo)
@@ -77,7 +78,7 @@ func SetupRoutes(g *echo.Group) {
 	paymentGroup.POST("", paymentHandler.CreatePayment)
 	paymentGroup.PUT("/:id", paymentHandler.UpdatePayment)
 	paymentGroup.DELETE("/:id", paymentHandler.DeletePayment)
-	paymentGroup.GET(userId, paymentHandler.FindByUser)
+	paymentGroup.GET(userID, paymentHandler.FindByUser)
 
 	statusRepo := repository.NewGormStatusRepository(models.DB)
 	statusHandler := handlers.NewStatusHandler(statusRepo)
@@ -103,5 +104,5 @@ func SetupRoutes(g *echo.Group) {
 	orderGroup.PUT("/:id", orderHandler.UpdateOrder)
 	orderGroup.DELETE("/:id", orderHandler.DeleteOrder)
 	orderGroup.POST("/make", orderHandler.MakeOrder)
-	orderGroup.GET(userId, orderHandler.GetOrderByUser)
+	orderGroup.GET(userID, orderHandler.GetOrderByUser)
 }
