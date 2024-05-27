@@ -10,16 +10,20 @@ import (
 	"github.com/labstack/gommon/log"
 )
 
-const invalidCategoryId = "Invalid category ID: "
+// constInvalidCategoryID represents the message for an invalid category ID.
+const invalidCategoryID = "Invalid category ID: "
 
+// CategoryHandler handles HTTP requests related to categories.
 type CategoryHandler struct {
 	Repo repository.CategoryRepository
 }
 
+// NewCategoryHandler creates a new instance of CategoryHandler.
 func NewCategoryHandler(repo repository.CategoryRepository) *CategoryHandler {
 	return &CategoryHandler{Repo: repo}
 }
 
+// CreateCategory handles the creation of a new category.
 func (h *CategoryHandler) CreateCategory(c echo.Context) error {
 	category := new(dtos.Category)
 	if err := c.Bind(category); err != nil {
@@ -36,6 +40,7 @@ func (h *CategoryHandler) CreateCategory(c echo.Context) error {
 	return c.JSON(http.StatusCreated, category)
 }
 
+// GetCategory retrieves all categories.
 func (h *CategoryHandler) GetCategory(c echo.Context) error {
 	categories, err := h.Repo.GetAllCategories()
 	if err != nil {
@@ -45,11 +50,12 @@ func (h *CategoryHandler) GetCategory(c echo.Context) error {
 	return c.JSON(http.StatusOK, categories)
 }
 
+// GetCategoryByID retrieves a category by its ID.
 func (h *CategoryHandler) GetCategoryById(c echo.Context) error {
 	id, err := getIntId(c)
 	if err != nil {
-		log.Error(invalidCategoryId, err.Error())
-		return c.JSON(http.StatusBadRequest, invalidCategoryId)
+		log.Error(invalidCategoryID, err.Error())
+		return c.JSON(http.StatusBadRequest, invalidCategoryID)
 	}
 
 	category, err := h.Repo.GetCategoryById(id)
@@ -62,11 +68,12 @@ func (h *CategoryHandler) GetCategoryById(c echo.Context) error {
 
 }
 
+// UpdateCategory updates a category.
 func (h *CategoryHandler) UpdateCategory(c echo.Context) error {
 	id, err := getIntId(c)
 	if err != nil {
-		log.Error(invalidCategoryId, err.Error())
-		return c.JSON(http.StatusBadRequest, invalidCategoryId)
+		log.Error(invalidCategoryID, err.Error())
+		return c.JSON(http.StatusBadRequest, invalidCategoryID)
 	}
 	var updatedCategory dtos.Category
 	if err := c.Bind(&updatedCategory); err != nil {
@@ -84,10 +91,11 @@ func (h *CategoryHandler) UpdateCategory(c echo.Context) error {
 
 }
 
+// DeleteCategory deletes a category.
 func (h *CategoryHandler) DeleteCategory(c echo.Context) error {
 	id, err := getIntId(c)
 	if err != nil {
-		log.Error(invalidCategoryId, err.Error())
+		log.Error(invalidCategoryID, err.Error())
 		return c.JSON(http.StatusBadRequest, "Invalid category ID")
 	}
 
@@ -98,5 +106,3 @@ func (h *CategoryHandler) DeleteCategory(c echo.Context) error {
 
 	return c.NoContent(http.StatusNoContent)
 }
-
-//test
