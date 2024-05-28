@@ -42,7 +42,11 @@ const Logo = () => {
                         <a href="/basket">Basket</a>
                     </li>
                     <li>
+                    {user ? (
                         <a href='/payments'>Payments</a>
+                        ) : (
+                            <p style={{color: "silver"}}>Payments</p>
+                        )}
                     </li>
                     <li>
                         {user ? (
