@@ -12,7 +12,6 @@ const checkUser = async (name, password) => {
         }
 
         const response = await axios.get(endpoint, data);
-
         return response.data;
     } catch(error) {
         console.error("Error during fetching user.", error);

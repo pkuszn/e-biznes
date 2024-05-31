@@ -51,7 +51,8 @@ func SetupRoutes(g *echo.Group) {
 	userGroup := g.Group("/user")
 	userGroup.GET("", userHandler.GetUser)
 	userGroup.GET("/:id", userHandler.GetUserById)
-	userGroup.GET("/check", userHandler.CheckUser)
+	// userGroup.GET("/check", userHandler.CheckUser)
+	userGroup.POST("/check", userHandler.CheckUser)
 	userGroup.POST("/name", userHandler.FindByName)
 	userGroup.POST("", userHandler.CreateUser)
 
