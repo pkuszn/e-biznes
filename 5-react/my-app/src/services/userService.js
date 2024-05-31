@@ -11,10 +11,11 @@ const checkUser = async (name, password) => {
             "password": password
         }
 
-        const response = await axios.get(endpoint, data);
+        const response = await axios.post(endpoint, data);
         return response.data;
     } catch(error) {
         console.error("Error during fetching user.", error);
+        alert(error)
     }
 }
 

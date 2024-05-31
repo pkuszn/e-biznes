@@ -47,7 +47,7 @@ func main() {
 		AllowMethods: []string{echo.GET, echo.HEAD, echo.PUT, echo.PATCH, echo.POST, echo.DELETE},
 	}))
 
-	dbURL := "mysql:mysql@tcp(localhost:3306)/product?parseTime=true"
+	dbURL := "mysql:mysql@tcp(db:3306)/product?parseTime=true"
 	db := models.Initialize(dbURL)
 	models.Migrate(db)
 

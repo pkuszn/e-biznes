@@ -10,10 +10,7 @@ export const Form = () => {
         checkUser(user, password)
             .then((res) => {
                 if (res) {
-                    console.log(res);
-                    if (res.status == 200) {
-                        sessionStorage.setItem("username", user);
-                    }
+                    sessionStorage.setItem("username", user);
                 } else {
                     alert("User doesn't exists");
                 }

@@ -24,6 +24,11 @@ const Register = () => {
         const id = new Date().toISOString();
         const createdDate = new Date();
         
+        if (!formData.name || !formData.surname || !formData.address || !formData.password) {
+            alert("All fields are required");
+            return;
+        }
+
         const newUser = new User(
             id,
             formData.name,
