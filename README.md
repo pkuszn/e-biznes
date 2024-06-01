@@ -31,6 +31,9 @@
 
 
 <b>Task no.6</b> <i>Tests</i>
+
+3.0 [4e78f813308c5ced55d2c458e16cc670647c01b3](https://github.com/pkuszn/e-biznes/tree/4e78f813308c5ced55d2c458e16cc670647c01b3)
+
 <b>Task no.7</b> <i>Sonar</i>
 
 3.5 [7ed4b933f66ff295ffdc18c40b4e9fae43db4fb0](https://github.com/pkuszn/e-biznes/tree/7ed4b933f66ff295ffdc18c40b4e9fae43db4fb0)
