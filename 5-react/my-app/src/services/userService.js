@@ -20,10 +20,20 @@ const checkUser = async (name, password) => {
 }
 
 const fetchUser = async(name) => {
+    // if (name === undefined) {
+    //     console.log(`name is empty`);
+    //     return;
+    // }
+    // if (name === null) {
+    //     console.log(`name is null`);
+    //     return;
+    // }
+    
     if (name === "") {
-        console.log(`name is empty`);
+        console.log(`name is undefined`);
         return;
     }
+
     let endpoint = combiner(api.getUserByName);
     try {
         const data = {

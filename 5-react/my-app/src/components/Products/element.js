@@ -41,7 +41,7 @@ const Element = ({ product }) => {
                     <b>Price:</b> ${product.price.toFixed(2)}
                 </p>
                 <p>
-                    <b>Created Date:</b> {product.created_date}
+                    <b>Created Date:</b> {product.createdDate}
                 </p>
                 <p className="description">
                     <b>Description:</b> {product.description}

@@ -30,6 +30,10 @@ const Cart = () => {
         );
     };
 
+    const sumPrice = (price, quantity) => {
+        return quantity * price;
+    }
+
     const purchaseHandler = () => {
         const storedDataString = localStorage.getItem("cart");
         const storedData = storedDataString ? JSON.parse(storedDataString) : [];
@@ -41,18 +45,25 @@ const Cart = () => {
     };
 
     const handleBuy = () => {
+        const userName = getUserName();
+        if (userName === "" || userName === null || userName === undefined) {
+            alert("You need an account to buy a product.");
+            handleCleanBasket();
+            return;
+        }
+
         let purchases = Object.entries(products).map(([productId, product]) => {
             return new Purchase(
                 product.id,
                 user.id,
-                product.price,
-                product.quantity,
+                sumPrice(parseFloat(product.price), parseInt(product.quantity)),
+                parseInt(product.quantity),
                 new Date().toISOString(),
                 selectedDeliveryType,
                 selectedPaymentType
             );
         });
-        
+
         if (purchases.length === 0) {
             return;
         }
@@ -73,7 +84,7 @@ const Cart = () => {
                         .catch((err) => {
                             console.log(err);
                         })
-                    handleCleanBasket();    
+                    handleCleanBasket();
                 }
             })
             .catch((err) => {
