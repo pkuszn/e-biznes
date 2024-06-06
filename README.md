@@ -39,7 +39,7 @@
 
 3.5 [7ed4b933f66ff295ffdc18c40b4e9fae43db4fb0](https://github.com/pkuszn/e-biznes/tree/7ed4b933f66ff295ffdc18c40b4e9fae43db4fb0)
 
-4.5 [1b4d8b818c0a9b0b7d895a2c9993a1141eaf1852](https://github.com/pkuszn/e-biznes/tree/1b4d8b818c0a9b0b7d895a2c9993a1141eaf1852)
+4.5 [8feac7d2454ce2a063d4ac7fcfe63a2271a74de4](https://github.com/pkuszn/e-biznes/tree/8feac7d2454ce2a063d4ac7fcfe63a2271a74de4)
 
 <b>Task no.8</b> <i>OAuth2</i>
 
@@ -61,7 +61,7 @@
 | 4 | Go | :white_check_mark: |
 | 5 | Frontend React.JS | :white_check_mark: |
 | 6 | Tests | :white_check_mark: |
-| 7 | Sonar | :soon: |
+| 7 | Sonar | :white_check_mark: |
 | 8 | OAuth2 | :soon: |
 | 9 | ChatGPT bot | :soon: |
 | 10 | Chmura/CI | :soon: |
