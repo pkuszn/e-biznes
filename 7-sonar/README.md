@@ -42,3 +42,6 @@ fi
 
 exit 0
 ```
+
+Server app
+![alt text](<Screenshot 2024-06-06 202525.png>)
