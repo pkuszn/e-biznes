@@ -7,6 +7,16 @@ export const Form = () => {
         let user = document.getElementById("username").value;
         let password = document.getElementById("password").value;
 
+        if (user == null || user == undefined || user == "") {
+            alert("Missing username")
+            return;
+        }
+
+        if (password == null || password == undefined || password == "") {
+            alert("Missing password")
+            return;
+        }
+
         checkUser(user, password)
             .then((res) => {
                 if (res) {

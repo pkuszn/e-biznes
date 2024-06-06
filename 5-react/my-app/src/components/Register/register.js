@@ -23,9 +23,18 @@ const Register = () => {
         event.preventDefault();
         const id = new Date().toISOString();
         const createdDate = new Date();
-        
+
         if (!formData.name || !formData.surname || !formData.address || !formData.password) {
             alert("All fields are required");
+            return;
+        }
+
+        if (!formData.address.includes("@")) {
+            alert("email should contain @")
+            return;
+        }
+        if (formData.password.length < 4) {
+            alert("password length should be greater than 4")
             return;
         }
 
@@ -39,16 +48,16 @@ const Register = () => {
         );
 
         registerUser(newUser)
-        .then((res) => {
-            if (res) {
-                sessionStorage.setItem("username", newUser.name);
-            } else {
-                alert("User doesn't exists");
-            }
-        })
-        .catch((err) => {
-            alert(err.data);
-        });
+            .then((res) => {
+                if (res) {
+                    sessionStorage.setItem("username", newUser.name);
+                } else {
+                    alert("User doesn't exists");
+                }
+            })
+            .catch((err) => {
+                alert(err.data);
+            });
 
         alert("Registration successful");
         window.location.replace(`/`);

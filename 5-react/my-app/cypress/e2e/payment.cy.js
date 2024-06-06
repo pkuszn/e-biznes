@@ -7,6 +7,7 @@ describe('payment', () => {
         cy.get("#username").type('root')
         cy.get('#password').type('root')
         cy.get('button[type="submit"]').click();
+        cy.wait(1000);
         cy.get(':nth-child(2) > a').click();
         cy.get(':nth-child(1) > .product-card > .product-card-footer > .product-card-add > .product-button').click()
         cy.get(':nth-child(3) > a').click()
@@ -24,6 +25,7 @@ describe('payment', () => {
             })
         cy.wait(1000);
         cy.get(':nth-child(4) > a').click()
+        cy.wait(2000);
         cy.get('.payment-table-container')
             .find('tr')
             .last()
@@ -270,8 +272,8 @@ describe('payment', () => {
         cy.wait(1000);
         cy.get('.cart-submit > :nth-child(2)').click()
         cy.wait(1000);
-        cy.wait(1000);
         cy.get(':nth-child(4) > a').click()
+        cy.wait(1000);
         cy.get('.payment-table-container')
             .find('tr')
             .last()
@@ -279,6 +281,7 @@ describe('payment', () => {
             .then(($lastColumn) => {
                 cy.wrap($lastColumn).click()
                 const stub = cy.stub()
+                cy.wait(1000);
                 cy.on('window:alert', stub)
                     .then(() => {
                         expect(stub.getCall(0)).to.be.calledWith("Payment has been updated")

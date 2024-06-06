@@ -26,7 +26,7 @@ const Element = ({ product }) => {
     const quantityHandler = (value) => {
         setQuantity(value);
     }
-
+    
     return (
         <div className="product-card">
             <div className="product-details">

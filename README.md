@@ -29,7 +29,6 @@
 
 5.0 - [9a5ebfd4235465980c789ea67667c3baf6f830bb](https://github.com/pkuszn/e-biznes/tree/9a5ebfd4235465980c789ea67667c3baf6f830bb)
 
-
 <b>Task no.6</b> <i>Tests</i>
 
 3.0 [4e78f813308c5ced55d2c458e16cc670647c01b3](https://github.com/pkuszn/e-biznes/tree/4e78f813308c5ced55d2c458e16cc670647c01b3)

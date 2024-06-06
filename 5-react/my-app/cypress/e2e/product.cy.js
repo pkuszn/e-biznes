@@ -109,7 +109,7 @@ describe('product', () => {
     cy.get('.cart-item > :nth-child(5)').click()
     cy.get('.cart-container > :nth-child(3)').should('have.text', 'Your cart is empty.')
   })
-  
+
   it('clear cart', () => {
     cy.clearCookies();
     cy.clearLocalStorage()
@@ -129,11 +129,11 @@ describe('product', () => {
     cy.get(':nth-child(2) > .product-card > .product-card-footer > .product-card-add > .product-button').click()
     cy.get(':nth-child(3) > a').click()
     cy.get('.cart-submit > :nth-child(2)').click()
-    const stub = cy.stub()  
-    cy.on ('window:alert', stub)
-    .then(() => {
-      expect(stub.getCall(0)).to.be.calledWith("You need an account to buy a product.")      
-    })  
+    const stub = cy.stub()
+    cy.on('window:alert', stub)
+      .then(() => {
+        expect(stub.getCall(0)).to.be.calledWith("You need an account to buy a product.")
+      })
   })
 
   it('basket selected details 1 - user details', () => {
@@ -184,7 +184,7 @@ describe('product', () => {
     cy.get(':nth-child(6) > p > b').should("have.text", "Courier")
   })
 
-  
+
   it('basket selected details 4 - payment method', () => {
     cy.clearCookies();
     cy.clearLocalStorage()
@@ -301,7 +301,7 @@ describe('product', () => {
     cy.get(':nth-child(7) > p > b').should("have.text", "Blik")
   })
 
-  it('basket selected details 10 - blik', () => {
+  it('basket selected details 11 - paypal option', () => {
     cy.clearCookies();
     cy.clearLocalStorage()
     cy.visit('http://localhost:3000')
@@ -333,11 +333,11 @@ describe('product', () => {
     cy.get(':nth-child(4) > #selectOptions').select('Credit Card');
     cy.wait(2000);
     cy.get('.cart-submit > :nth-child(2)').click()
-    const stub = cy.stub()  
-    cy.on ('window:alert', stub)
-    .then(() => {
-      expect(stub.getCall(0)).to.be.calledWith("Products have been purchased.")      
-    })  
+    const stub = cy.stub()
+    cy.on('window:alert', stub)
+      .then(() => {
+        expect(stub.getCall(0)).to.be.calledWith("Products have been purchased.")
+      })
   })
 
   it('buy a product - with pay now', () => {
@@ -355,15 +355,15 @@ describe('product', () => {
     cy.get(':nth-child(2) > #selectOptions').select('Cash on delivery');
     cy.get(':nth-child(3) > #selectOptions').select('Courier');
     cy.get(':nth-child(4) > #selectOptions').select('Credit Card');
-    cy.get('#payNowCheckbox').click() 
+    cy.get('#payNowCheckbox').click()
     cy.wait(2000);
     cy.get('.cart-submit > :nth-child(2)').click()
-    const stub = cy.stub()  
-    cy.on ('window:alert', stub)
-    .then(() => {
-      cy.wait(1000);
-      expect(stub.getCall(0)).to.be.calledWith("Products have been purchased.")      
-    })  
+    const stub = cy.stub()
+    cy.on('window:alert', stub)
+      .then(() => {
+        cy.wait(1000);
+        expect(stub.getCall(0)).to.be.calledWith("Products have been purchased.")
+      })
 
   })
 
@@ -422,14 +422,14 @@ describe('product', () => {
     cy.get(':nth-child(2) > #selectOptions').select('Cash on delivery');
     cy.get(':nth-child(3) > #selectOptions').select('Courier');
     cy.get(':nth-child(4) > #selectOptions').select('Credit Card');
-    cy.get('#payNowCheckbox').click() 
+    cy.get('#payNowCheckbox').click()
     cy.wait(2000);
     cy.get('.cart-submit > :nth-child(2)').click()
-    const stub = cy.stub()  
-    cy.on ('window:alert', stub)
-    .then(() => {
-      expect(stub.getCall(0)).to.be.calledWith("Products have been purchased.")      
-    })  
+    const stub = cy.stub()
+    cy.on('window:alert', stub)
+      .then(() => {
+        expect(stub.getCall(0)).to.be.calledWith("Products have been purchased.")
+      })
   })
 
   it('buy all products', () => {
@@ -476,14 +476,14 @@ describe('product', () => {
     cy.get(':nth-child(2) > #selectOptions').select('Cash on delivery');
     cy.get(':nth-child(3) > #selectOptions').select('Courier');
     cy.get(':nth-child(4) > #selectOptions').select('Credit Card');
-    cy.get('#payNowCheckbox').click() 
+    cy.get('#payNowCheckbox').click()
     cy.wait(2000);
     cy.get('.cart-submit > :nth-child(2)').click()
-    const stub = cy.stub()  
-    cy.on ('window:alert', stub)
-    .then(() => {
-      expect(stub.getCall(0)).to.be.calledWith("Products have been purchased.")      
-    })  
+    const stub = cy.stub()
+    cy.on('window:alert', stub)
+      .then(() => {
+        expect(stub.getCall(0)).to.be.calledWith("Products have been purchased.")
+      })
   })
 
   it('verify basket content label', () => {
@@ -496,35 +496,87 @@ describe('product', () => {
     cy.get('button[type="submit"]').click();
     cy.get(':nth-child(2) > a').click();
     cy.get(':nth-child(1) > .product-card > .product-card-footer > .product-card-add > .product-button').click()
+    cy.wait(1000);
     cy.get(':nth-child(2) > .product-card > .product-card-footer > .product-card-add > .product-button').click()
+    cy.wait(1000);
     cy.get(':nth-child(3) > .product-card > .product-card-footer > .product-card-add > .product-button').click()
+    cy.wait(1000);
     cy.get(':nth-child(4) > .product-card > .product-card-footer > .product-card-add > .product-button').click()
+    cy.wait(1000);
     cy.get(':nth-child(5) > .product-card > .product-card-footer > .product-card-add > .product-button').click()
+    cy.wait(1000);
     cy.get(':nth-child(6) > .product-card > .product-card-footer > .product-card-add > .product-button').click()
+    cy.wait(1000);
     cy.get(':nth-child(7) > .product-card > .product-card-footer > .product-card-add > .product-button').click()
+    cy.wait(1000);
     cy.get(':nth-child(8) > .product-card > .product-card-footer > .product-card-add > .product-button').click()
+    cy.wait(1000);
     cy.get(':nth-child(9) > .product-card > .product-card-footer > .product-card-add > .product-button').click()
+    cy.wait(1000);
     cy.get(':nth-child(10) > .product-card > .product-card-footer > .product-card-add > .product-button').click()
+    cy.wait(1000);
     cy.get(':nth-child(11) > .product-card > .product-card-footer > .product-card-add > .product-button').click()
+    cy.wait(1000);
     cy.get(':nth-child(12) > .product-card > .product-card-footer > .product-card-add > .product-button').click()
+    cy.wait(1000);
     cy.get(':nth-child(13) > .product-card > .product-card-footer > .product-card-add > .product-button').click()
+    cy.wait(1000);
     cy.get(':nth-child(14) > .product-card > .product-card-footer > .product-card-add > .product-button').click()
+    cy.wait(1000);
     cy.get(':nth-child(15) > .product-card > .product-card-footer > .product-card-add > .product-button').click()
+    cy.wait(1000);
     cy.get(':nth-child(16) > .product-card > .product-card-footer > .product-card-add > .product-button').click()
+    cy.wait(1000);
     cy.get(':nth-child(17) > .product-card > .product-card-footer > .product-card-add > .product-button').click()
+    cy.wait(1000);
     cy.get(':nth-child(18) > .product-card > .product-card-footer > .product-card-add > .product-button').click()
+    cy.wait(1000);
     cy.get(':nth-child(19) > .product-card > .product-card-footer > .product-card-add > .product-button').click()
+    cy.wait(1000);
     cy.get(':nth-child(20) > .product-card > .product-card-footer > .product-card-add > .product-button').click()
+    cy.wait(1000);
     cy.get(':nth-child(21) > .product-card > .product-card-footer > .product-card-add > .product-button').click()
+    cy.wait(1000);
     cy.get(':nth-child(22) > .product-card > .product-card-footer > .product-card-add > .product-button').click()
+    cy.wait(1000);
     cy.get(':nth-child(23) > .product-card > .product-card-footer > .product-card-add > .product-button').click()
+    cy.wait(1000);
     cy.get(':nth-child(24) > .product-card > .product-card-footer > .product-card-add > .product-button').click()
+    cy.wait(1000);
     cy.get(':nth-child(25) > .product-card > .product-card-footer > .product-card-add > .product-button').click()
+    cy.wait(1000);
     cy.get(':nth-child(26) > .product-card > .product-card-footer > .product-card-add > .product-button').click()
+    cy.wait(1000);
     cy.get(':nth-child(27) > .product-card > .product-card-footer > .product-card-add > .product-button').click()
+    cy.wait(1000);
     cy.get(':nth-child(28) > .product-card > .product-card-footer > .product-card-add > .product-button').click()
+    cy.wait(1000);
     cy.get(':nth-child(29) > .product-card > .product-card-footer > .product-card-add > .product-button').click()
+    cy.wait(1000);
     cy.get(':nth-child(30) > .product-card > .product-card-footer > .product-card-add > .product-button').click()
-    
+    cy.wait(1000);
+    cy.get('ul > :nth-child(6)').should("have.text", "Basket content: 30")
+  })
+
+  it('add products and delete one', () => {
+    cy.clearCookies();
+    cy.clearLocalStorage()
+    cy.visit('http://localhost:3000')
+    cy.get('a[href*="/login"]').click({ force: true });
+    cy.get("#username").type('root')
+    cy.get('#password').type('root')
+    cy.get('button[type="submit"]').click();
+    cy.get(':nth-child(2) > a').click();
+    cy.wait(1000);
+    cy.get(':nth-child(1) > .product-card > .product-card-footer > .product-card-add > .product-button').click()
+    cy.wait(1000);
+    cy.get(':nth-child(2) > .product-card > .product-card-footer > .product-card-add > .product-button').click()
+    cy.get(':nth-child(3) > a').click()
+    cy.wait(1000);
+    cy.get('tbody > :nth-child(2) > :nth-child(5)').click();
+    cy.wait(1000);
+    cy.get('.cart-table-container')
+      .find('tr') 
+      .should('have.length', 1);
   })
 })
