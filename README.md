@@ -33,6 +33,8 @@
 
 3.0 [4e78f813308c5ced55d2c458e16cc670647c01b3](https://github.com/pkuszn/e-biznes/tree/4e78f813308c5ced55d2c458e16cc670647c01b3)
 
+3.5 [d921baa4e0412a0b5a58b7127df9788274f85c24](https://github.com/pkuszn/e-biznes/tree/d921baa4e0412a0b5a58b7127df9788274f85c24)
+
 <b>Task no.7</b> <i>Sonar</i>
 
 3.5 [7ed4b933f66ff295ffdc18c40b4e9fae43db4fb0](https://github.com/pkuszn/e-biznes/tree/7ed4b933f66ff295ffdc18c40b4e9fae43db4fb0)
@@ -58,7 +60,7 @@
 | 3 | Kotlin | :white_check_mark: |
 | 4 | Go | :white_check_mark: |
 | 5 | Frontend React.JS | :white_check_mark: |
-| 6 | Tests | :soon: |
+| 6 | Tests | :white_check_mark: |
 | 7 | Sonar | :soon: |
 | 8 | OAuth2 | :soon: |
 | 9 | ChatGPT bot | :soon: |
