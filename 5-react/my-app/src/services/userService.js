@@ -2,6 +2,7 @@ import { api } from "../utility/const.js";
 import { combiner } from "../utility/utils.js";
 import axios from "axios";
 import { User } from "../models/user.js";
+import { UserInfo } from "../models/userInfo.js";
 
 const checkUser = async (name, password) => {
     let endpoint = combiner(api.checkUser);
@@ -13,13 +14,13 @@ const checkUser = async (name, password) => {
 
         const response = await axios.post(endpoint, data);
         return response.data;
-    } catch(error) {
+    } catch (error) {
         console.error("Error during fetching user.", error);
         alert(error)
     }
 }
 
-const fetchUser = async(name) => {
+const fetchUser = async (name) => {
     // if (name === undefined) {
     //     console.log(`name is empty`);
     //     return;
@@ -28,7 +29,7 @@ const fetchUser = async(name) => {
     //     console.log(`name is null`);
     //     return;
     // }
-    
+
     if (name === "") {
         console.log(`name is undefined`);
         return;
@@ -53,7 +54,7 @@ const fetchUser = async(name) => {
     }
 }
 
-const registerUser = async(user) => {
+const registerUser = async (user) => {
     if (user == null || user == undefined) {
         console.log(`user is empty or null`);
         return;
@@ -81,8 +82,29 @@ const registerUser = async(user) => {
     }
 }
 
+const fetchUserInfo = async (token) => {
+    let endpoint = combiner(api.fetchUserInfo);
+    try {
+        const data = {
+            "token": token
+        }
+        let response = await axios.post(endpoint, data);
+        console.log(response);
+        if (response.data) {
+            let u = response.data;
+            return new UserInfo(u.githubId, u.name, u.token);
+        } else {
+            return {};
+        }
+
+    } catch (error) {
+        console.error("Error during fetching user.", error);
+    }
+}
+
 export {
     checkUser,
     fetchUser,
-    registerUser
+    registerUser,
+    fetchUserInfo
 }

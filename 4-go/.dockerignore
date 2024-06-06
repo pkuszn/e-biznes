@@ -7,7 +7,6 @@ docker-compose*.yml
 .vscode
 .idea
 
-.env
 *.md
 node_modules
 vendor

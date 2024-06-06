@@ -4,6 +4,8 @@ WORKDIR /app
 
 COPY . .
 
+COPY ./.env ./.env
+
 ENV CGO_ENABLED=1
 
 RUN go mod download

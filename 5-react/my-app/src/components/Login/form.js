@@ -1,6 +1,6 @@
 import React from "react";
 import "./style.css";
-import { checkUser } from "../../services/userService";
+import { checkUser, fetchUserInfo } from "../../services/userService";
 
 export const Form = () => {
     const userHandler = () => {
@@ -29,34 +29,28 @@ export const Form = () => {
                 alert(err.data);
             });
 
-        // const query = new URLSearchParams(window.location.search);
-        // const token = query.get('token');
-        // const queryName = query.get('user');
-        // if (token) {
-        //     sessionStorage.setItem('token', token);
-        //     sessionStorage.setItem('username', queryName);
-        //     fetchUser(token);
-        // }
+        const query = new URLSearchParams(window.location.search);
+        const token = query.get('token');
+        alert(token);
+        if (token) {
+            fetchUserInfo(token)
+                .then((res) => {
+                    if (res) {
+                        sessionStorage.setItem("username", res.name);
+                    } else {
+                        alert("User doesn't exists");
+                    }
+                })
+                .catch((err) => {
+                    alert(err.data);
+                });
+        }
     };
 
     const registerHandler = (event) => {
         event.preventDefault();
         window.location.replace(`/register`);
     };
-
-    // //TODO
-    // const fetchUser = async (token) => {
-    //     try {
-    //       const response = await axios.get('http://localhost:1323/api/userinfo', {
-    //         headers: {
-    //           'Authorization': `Bearer ${token}`
-    //         }
-    //       });
-    //       setUser(response.data);
-    //     } catch (error) {
-    //       console.error('Error fetching user', error);
-    //     }
-    //   };
 
     const login = () => {
         window.location.href = "http://localhost:1323/auth/github";

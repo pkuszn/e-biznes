@@ -6,10 +6,10 @@ import (
 	"go-rest-api/models"
 	"go-rest-api/repository"
 	"go-rest-api/routes"
-	"log"
 	"net/http"
 	"os"
 	"path/filepath"
+	"time"
 
 	"github.com/joho/godotenv"
 	"github.com/labstack/echo/v4"
@@ -19,17 +19,31 @@ import (
 )
 
 func main() {
+	var attempt = 0
+	var maxAttempts = 60
+	for {
+		attempt++
+		fmt.Printf("Attempt %d to load environment file...\n", attempt)
+		pwd, err := os.Getwd()
+		if err != nil {
+			panic(err)
+		}
+		err = godotenv.Load(filepath.Join(pwd, "./.env"))
+		if err == nil {
+			fmt.Printf("Environment file loaded successfully")
+			break
+		}
 
-	pwd, err := os.Getwd()
-	if err != nil {
-		panic(err)
+		fmt.Printf("Failed to load environment file: %v\n", err)
+		if attempt >= maxAttempts {
+			panic("Failed to load environemnt file")
+		}
+
+		fmt.Printf("Retrying in 5 seconds...\n")
+		time.Sleep(5 * time.Second)
 	}
-	err = godotenv.Load(filepath.Join(pwd, "./.env"))
-	if err != nil {
-		log.Fatal("Error loading .env file")
-	}
+
 	fmt.Println(fmt.Sprintf("GITHUB_CLIENT_ID=%s", os.Getenv("GITHUB_CLIENT_ID")))
-
 	var GithubOauthConfig = &oauth2.Config{
 		ClientID:     os.Getenv("GITHUB_CLIENT_ID"),
 		ClientSecret: os.Getenv("GITHUB_CLIENT_SECRET"),
@@ -62,6 +76,9 @@ func main() {
 	})
 	e.GET("/auth/github/callback", func(c echo.Context) error {
 		return gitHubAuthHandler.CallbackGithub(c, db, GithubOauthConfig)
+	})
+	e.POST("/auth/github/userinfo", func(c echo.Context) error {
+		return gitHubAuthHandler.GetUserInfo(c)
 	})
 
 	api := e.Group("/api")

@@ -24,6 +24,7 @@ services:
       - db
     networks:
       - mynet
+    env_file: .env
 
   react-app:
     build: ../5-react/my-app
