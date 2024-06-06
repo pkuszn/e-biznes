@@ -8,23 +8,28 @@ import (
 	"net/http"
 
 	"github.com/labstack/echo/v4"
+	"github.com/labstack/gommon/log"
 	"golang.org/x/oauth2"
 	"gorm.io/gorm"
 )
 
+// GithubAuthHandler handles GitHub authentication.
 type GithubAuthHandler struct {
 	Repo repository.TokenRepository
 }
 
+// NewGithubAuthHandler creates a new GithubAuthHandler.
 func NewGithubAuthHandler(repo repository.TokenRepository) *GithubAuthHandler {
 	return &GithubAuthHandler{Repo: repo}
 }
 
+// LoginGithub redirects the user to the GitHub login page.
 func (h *GithubAuthHandler) LoginGithub(c echo.Context, o *oauth2.Config) error {
 	url := o.AuthCodeURL("state", oauth2.AccessTypeOffline)
 	return c.Redirect(http.StatusTemporaryRedirect, url)
 }
 
+// CallbackGithub handles the GitHub OAuth callback and exchanges the code for a token.
 func (h *GithubAuthHandler) CallbackGithub(c echo.Context, db *gorm.DB, o *oauth2.Config) error {
 	code := c.QueryParam("code")
 
@@ -50,4 +55,20 @@ func (h *GithubAuthHandler) CallbackGithub(c echo.Context, db *gorm.DB, o *oauth
 		"token": user.Token,
 		"user":  user.Name,
 	})
+}
+
+// GetUserInfo retrieves user information based on the provided token.
+func (h *GithubAuthHandler) GetUserInfo(c echo.Context) error {
+	token := new(dtos.Token)
+	if err := c.Bind(token); err != nil {
+		log.Error(err.Error())
+		return c.String(http.StatusBadRequest, "Token is required")
+	}
+
+	user, err := h.Repo.GetUserInfo(token)
+	if err != nil {
+		return c.String(http.StatusNotFound, "User not found: "+err.Error())
+	}
+
+	return c.JSON(http.StatusOK, user)
 }
