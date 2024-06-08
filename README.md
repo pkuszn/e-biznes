@@ -45,6 +45,8 @@
 
 3.5 [7e721ba1f48cff8a5223237e282b6914bbe83c87](https://github.com/pkuszn/e-biznes/tree/7e721ba1f48cff8a5223237e282b6914bbe83c87)
 
+4.5 [58897c55c861c3a5d8abae388eb23e0b4dede52a]https://github.com/pkuszn/e-biznes/tree/58897c55c861c3a5d8abae388eb23e0b4dede52a
+
 <b>Task no.9</b> <i>ChatGPT bot</i>
 <b>Task no.10</b> <i>Chmura/CI</i>
 
@@ -62,6 +64,6 @@
 | 5 | Frontend React.JS | :white_check_mark: |
 | 6 | Tests | :white_check_mark: |
 | 7 | Sonar | :white_check_mark: |
-| 8 | OAuth2 | :soon: |
+| 8 | OAuth2 | :white_check_mark: |
 | 9 | ChatGPT bot | :soon: |
 | 10 | Chmura/CI | :soon: |
