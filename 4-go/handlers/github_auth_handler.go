@@ -6,6 +6,7 @@ import (
 	"go-rest-api/dtos"
 	"go-rest-api/repository"
 	"net/http"
+	"os"
 
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/gommon/log"
@@ -51,10 +52,9 @@ func (h *GithubAuthHandler) CallbackGithub(c echo.Context, db *gorm.DB, o *oauth
 	}
 	var user = h.Repo.FirstOrCreate(userInfo)
 
-	return c.JSON(http.StatusOK, map[string]string{
-		"token": user.Token,
-		"user":  user.Name,
-	})
+	// Redirect to homepage with token
+	redirectURL := os.Getenv("REDIRECT_URL") + "?token=" + user.Token
+	return c.Redirect(http.StatusTemporaryRedirect, redirectURL)
 }
 
 // GetUserInfo retrieves user information based on the provided token.

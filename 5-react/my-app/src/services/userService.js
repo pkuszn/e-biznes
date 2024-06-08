@@ -1,4 +1,4 @@
-import { api } from "../utility/const.js";
+import { api, auth } from "../utility/const.js";
 import { combiner } from "../utility/utils.js";
 import axios from "axios";
 import { User } from "../models/user.js";
@@ -83,7 +83,7 @@ const registerUser = async (user) => {
 }
 
 const fetchUserInfo = async (token) => {
-    let endpoint = combiner(api.fetchUserInfo);
+    let endpoint = auth.fetchUserInfo;
     try {
         const data = {
             "token": token
@@ -92,7 +92,8 @@ const fetchUserInfo = async (token) => {
         console.log(response);
         if (response.data) {
             let u = response.data;
-            return new UserInfo(u.githubId, u.name, u.token);
+            console.log(u);
+            return new UserInfo(u.GithubID, u.Name, u.Token);
         } else {
             return {};
         }

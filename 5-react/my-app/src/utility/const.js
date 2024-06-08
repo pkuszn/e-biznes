@@ -15,7 +15,11 @@ const api = {
     paymentMethod: "payment-method",
     paymentByUser: 'payment/user',
     address: "http://localhost:1323/api",
-    fetchUserInfo: "auth.github/userinfo"
+    fetchUserInfo: "auth/github/userinfo"
+}
+
+const auth = {
+    fetchUserInfo: "http://localhost:1323/auth/github/userinfo",
 }
 
 const paymentTypes = {
@@ -62,5 +66,6 @@ export {
     paymentTypes,
     deliveryTypes,
     statuses,
-    paymentMethods
+    paymentMethods,
+    auth,
 }

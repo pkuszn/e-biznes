@@ -1,4 +1,4 @@
-import {api, category, statuses, paymentMethods} from './const.js'
+import {api, category, statuses, paymentMethods, auth} from './const.js'
 
 const combiner = (endpoint, args) => {
     let address = api.address;
@@ -60,6 +60,15 @@ const statusEnum = (id) => statuses[id] || "Unknown";
 const paymentMethodEnum = (id) => paymentMethods[id] || "Unknown";
 const categoryEnum = (id) => category[id] || "Unknown";
 
+const generateRandomState = () => {
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let state = '';
+    for (let i = 0; i < 16; i++) {
+        state += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    return state;
+}
+
 export {
     categoryEnum,
     combiner,
@@ -68,4 +77,5 @@ export {
     paymentMethodMapper,
     statusEnum,
     paymentMethodEnum,
+    generateRandomState,
 }
