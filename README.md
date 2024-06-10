@@ -80,5 +80,5 @@ Server app
 | 6 | Tests | :white_check_mark: |
 | 7 | Sonar | :white_check_mark: |
 | 8 | OAuth2 | :white_check_mark: |
-| 9 | ChatGPT bot | :soon: |
+| 9 | ChatGPT bot | :white_check_mark: |
 | 10 | Chmura/CI | :soon: |
