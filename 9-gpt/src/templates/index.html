@@ -1,0 +1,39 @@
+<!-- templates/index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ollama Frontend</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Ollama Frontend</h1>
+        <form id="form" action="/" method="post">
+            <label for="message">Enter your message:</label><br>
+            <input type="text" id="message" name="message"><br><br>
+            <input type="submit" value="Submit">
+        </form>
+        <div class="loader" id="loader"></div>
+        <div id="response"> 
+            {% if result %}
+            <div class="conversation">
+                <h2>Response:</h2>
+                <p>{{ result }}</p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+    <script>
+        document.getElementById("form").addEventListener("submit", function() {
+            document.getElementById("loader").style.display = "block";
+        });
+
+        document.getElementById("response").addEventListener("DOMNodeInserted", function() {
+            document.getElementById("loader").style.display = "none";
+        });
+    </script>
+</body>
+</html>

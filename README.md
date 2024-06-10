@@ -25,6 +25,7 @@
 
 4.0 - [3e0ce03c2717bc7c4a38a813d172ad95d1854321](https://github.com/pkuszn/e-biznes/tree/3e0ce03c2717bc7c4a38a813d172ad95d1854321)
 
+
 <b>Task no.5</b> <i>Frontend React.JS</i>
 
 5.0 - [9a5ebfd4235465980c789ea67667c3baf6f830bb](https://github.com/pkuszn/e-biznes/tree/9a5ebfd4235465980c789ea67667c3baf6f830bb)
@@ -40,6 +41,17 @@
 3.5 [7ed4b933f66ff295ffdc18c40b4e9fae43db4fb0](https://github.com/pkuszn/e-biznes/tree/7ed4b933f66ff295ffdc18c40b4e9fae43db4fb0)
 
 4.5 [8feac7d2454ce2a063d4ac7fcfe63a2271a74de4](https://github.com/pkuszn/e-biznes/tree/8feac7d2454ce2a063d4ac7fcfe63a2271a74de4)
+
+
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=pkuszn_e-biznes&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=pkuszn_e-biznes)
+
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=pkuszn_e-biznes&metric=bugs)](https://sonarcloud.io/summary/new_code?id=pkuszn_e-biznes)
+
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=pkuszn_e-biznes&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=pkuszn_e-biznes)
+
+Server app
+![alt text](<./7-sonar/Screenshot 2024-06-06 202525.png>)
+
 
 <b>Task no.8</b> <i>OAuth2</i>
 
