@@ -60,6 +60,9 @@ Server app
 4.5 [58897c55c861c3a5d8abae388eb23e0b4dede52a](https://github.com/pkuszn/e-biznes/tree/58897c55c861c3a5d8abae388eb23e0b4dede52a)
 
 <b>Task no.9</b> <i>ChatGPT bot</i>
+
+3.5 [447c852c19f705bb9814532eed6e088249566461](https://github.com/pkuszn/e-biznes/tree/447c852c19f705bb9814532eed6e088249566461)
+
 <b>Task no.10</b> <i>Chmura/CI</i>
 
 
