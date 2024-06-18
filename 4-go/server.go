@@ -61,8 +61,15 @@ func main() {
 		AllowMethods: []string{echo.GET, echo.HEAD, echo.PUT, echo.PATCH, echo.POST, echo.DELETE},
 	}))
 
-	dbURL := "mysql:mysql@tcp(db:3306)/product?parseTime=true"
-	db := models.Initialize(dbURL)
+	dsn := "sqlserver://%s:%s@%s:%s?database=%s&connection+timeout=30"
+	dsn = fmt.Sprintf(dsn,
+		os.Getenv("USER"),
+		os.Getenv("PASSWORD"),
+		os.Getenv("SERVER"),
+		os.Getenv("PORT"),
+		os.Getenv("DATABASE"),
+	)
+	db := models.Initialize(dsn)
 	models.Migrate(db)
 
 	e.GET("/", func(c echo.Context) error {
