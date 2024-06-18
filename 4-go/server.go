@@ -90,7 +90,7 @@ func main() {
 
 	api := e.Group("/api")
 	routes.SetupRoutes(api)
-	e.Logger.Fatal(e.Start(":1323"))
+	e.Logger.Fatal(e.Start(os.Getenv("APP_PORT")))
 }
 
 //test
