@@ -61,12 +61,11 @@ func main() {
 		AllowMethods: []string{echo.GET, echo.HEAD, echo.PUT, echo.PATCH, echo.POST, echo.DELETE},
 	}))
 
-	dsn := "sqlserver://%s:%s@%s:%s?database=%s&connection+timeout=30"
+	dsn := "sqlserver://%s:%s@%s?database=%s&connection+timeout=30"
 	dsn = fmt.Sprintf(dsn,
 		os.Getenv("USER"),
 		os.Getenv("PASSWORD"),
 		os.Getenv("SERVER"),
-		os.Getenv("PORT"),
 		os.Getenv("DATABASE"),
 	)
 	db := models.Initialize(dsn)

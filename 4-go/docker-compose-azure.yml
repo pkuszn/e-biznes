@@ -1,0 +1,38 @@
+version: '3.7'
+
+services:
+  go-app:
+    build: .
+    image: teashopcontainerregistry.azurecr.io/4-go-go-app
+    ports:
+      - "1323:1323"
+    networks:
+      - mynet
+    environment:
+      - GITHUB_CLIENT_ID="Ov23liRt5OqDOgVtR6YB"
+      - GITHUB_CLIENT_SECRET="78c70c8eddce01969825b8698b3f0418b7e42d41"
+      - REDIRECT_URL="https://tea-shop-web-app.azurewebsites.net/login"
+      - SERVER="tea-shop-db.database.windows.net"
+      - USER="test"
+      - PASSWORD="1H4Q3e0fx7tXrZj"
+      - DATABASE="tea-shop-db"
+      - APP_PORT="1323"
+
+  react-app:
+    build: .
+    image: teashopcontainerregistry.azurecr.io/4-go-react-app
+    ports:
+      - "1423:80" 
+    stdin_open: true
+    tty: true
+    depends_on:
+      - go-app
+    networks:
+      - mynet
+
+volumes:
+  mysql-data:
+
+networks:
+  mynet:
+    driver: bridge
