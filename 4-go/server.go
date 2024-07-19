@@ -61,13 +61,12 @@ func main() {
 		AllowMethods: []string{echo.GET, echo.HEAD, echo.PUT, echo.PATCH, echo.POST, echo.DELETE},
 	}))
 
-	dsn := "sqlserver://%s:%s@%s?database=%s&connection+timeout=30"
-	dsn = fmt.Sprintf(dsn,
-		os.Getenv("USER"),
-		os.Getenv("PASSWORD"),
-		os.Getenv("SERVER"),
-		os.Getenv("DATABASE"),
-	)
+	user := os.Getenv("USER")
+	password := os.Getenv("PASSWORD")
+	server := os.Getenv("SERVER")
+	database := os.Getenv("DATABASE")
+	port := os.Getenv("PORT")
+	dsn := "sqlserver://" + user + ":" + password + "@" + server + ":" + port + "?database=" + database + "&connection+timeout=30"
 	db := models.Initialize(dsn)
 	models.Migrate(db)
 
@@ -89,7 +88,8 @@ func main() {
 
 	api := e.Group("/api")
 	routes.SetupRoutes(api)
-	e.Logger.Fatal(e.Start(os.Getenv("APP_PORT")))
+	appPort := os.Getenv("APP_PORT")
+	e.Logger.Fatal(e.Start(appPort))
 }
 
 //test

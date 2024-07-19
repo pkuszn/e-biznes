@@ -1,41 +1,42 @@
 version: '3.7'
 
 services:
-  db:
-    image: mysql:latest
-    ports:
-      - "3306:3306"
-    environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: product
-      MYSQL_USER: mysql
-      MYSQL_PASSWORD: mysql
-    volumes:
-      - mysql-data:/var/lib/mysql
-    networks:
-      - mynet
-
   go-app:
-    build:
-      context: .
+    build: .
+    image: ebiznes-registry/4-go-go-app
     ports:
       - "1323:1323"
-    depends_on:
-      - db
     networks:
       - mynet
-    env_file: .env
+    environment:
+      - GITHUB_CLIENT_ID=Ov23liRt5OqDOgVtR6YB
+      - GITHUB_CLIENT_SECRET=78c70c8eddce01969825b8698b3f0418b7e42d41
+      - REDIRECT_URL=https://tea-shop-web-app.azurewebsites.net/login
+      - SERVER=tea-shop-pk-server.database.windows.net
+      - USER=test
+      - PASSWORD=1H4Q3e0fx7tXrZj
+      - DATABASE=tea-shop-db
+      - PORT=1433
+      - APP_PORT=1323
 
   react-app:
-    build: ../5-react/my-app
+    build: .
+    image: ebiznes-registry/4-go-react-app
     ports:
-      - "3000:80" 
+      - "1423:80" 
     stdin_open: true
     tty: true
     depends_on:
       - go-app
     networks:
       - mynet
+
+  db:
+    build:
+      context: ./db
+      dockerfile: Dockerfile
+    ports:
+        - 1433:1433
 
 volumes:
   mysql-data:
