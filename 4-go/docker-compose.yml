@@ -3,7 +3,7 @@ version: '3.7'
 services:
   go-app:
     build: .
-    image: ebiznes-registry/4-go-go-app
+    image: europe-central2-docker.pkg.dev/gleaming-scene-429317-d6/ebiznes-registry/4-go-go-app
     ports:
       - "1323:1323"
     networks:
@@ -21,7 +21,7 @@ services:
 
   react-app:
     build: .
-    image: ebiznes-registry/4-go-react-app
+    image: europe-central2-docker.pkg.dev/gleaming-scene-429317-d6/ebiznes-registry/4-go-react-app
     ports:
       - "1423:80" 
     stdin_open: true
@@ -33,8 +33,9 @@ services:
 
   db:
     build:
-      context: ./db
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: Dockerfile.database
+    image: europe-central2-docker.pkg.dev/gleaming-scene-429317-d6/ebiznes-registry/4-go-db-app
     ports:
         - 1433:1433
 
