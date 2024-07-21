@@ -24,10 +24,10 @@ services:
       - mynet
 
   tea-shop-db:
-    build:
-      context: .
-      dockerfile: Dockerfile.database
-    image: europe-central2-docker.pkg.dev/gleaming-scene-429317-d6/ebiznes-registry/4-go-db-app
+    # build:
+    #   context: .
+    #   dockerfile: Dockerfile.database
+    image: europe-central2-docker.pkg.dev/gleaming-scene-429317-d6/ebiznes-registry/4-go-tea-shop-db
     ports:
         - 1433:1433
     networks:
