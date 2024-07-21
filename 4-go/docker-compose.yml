@@ -33,10 +33,10 @@ services:
     networks:
       - mynet
     volumes:
-      - /home/pkuszneruk/university/e-biznes/4-go/entrypoint.sh:/usr/src/app/entrypoint.sh
-      - /home/pkuszneruk/university/e-biznes/4-go/run-initialization.sh:/usr/src/app/run-initialization.sh
-      - /home/pkuszneruk/university/e-biznes/4-go/create_mssql.sql:/usr/src/app/create_mssql.sql
-      - /home/pkuszneruk/university/e-biznes/4-go/init_mssql.sql:/usr/src/app/init_mssql.sql
+      - ./entrypoint.sh:/usr/src/app/entrypoint.sh
+      - ./run-initialization.sh:/usr/src/app/run-initialization.sh
+      - ./create_mssql.sql:/usr/src/app/create_mssql.sql
+      - ./init_mssql.sql:/usr/src/app/init_mssql.sql
 
 networks:
   mynet:
