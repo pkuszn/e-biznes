@@ -3,7 +3,7 @@ version: '3.7'
 services:
   go-app:
     # build: .
-    image: europe-central2-docker.pkg.dev/gleaming-scene-429317-d6/ebiznes-registry/4-go-go-app
+    image: europe-central2-docker.pkg.dev/gleaming-scene-429317-d6/ebiznes-registry/4-go-app
     ports:
       - "1323:1323"
     networks:
