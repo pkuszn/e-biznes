@@ -23,6 +23,7 @@ func Initialize(dbURL string) *gorm.DB {
 	for {
 		attempt++
 		fmt.Printf("Attempt %d to connect to the database...\n", attempt)
+		fmt.Println(dbURL)
 		db, err := gorm.Open(sqlserver.Open(dbURL), &gorm.Config{})
 		if err == nil {
 			fmt.Println("Connected to the database successfully!")

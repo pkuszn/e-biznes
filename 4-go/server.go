@@ -67,6 +67,7 @@ func main() {
 	database := os.Getenv("DATABASE")
 	port := os.Getenv("PORT")
 	dsn := "sqlserver://" + user + ":" + password + "@" + server + ":" + port + "?database=" + database + "&connection+timeout=30"
+
 	db := models.Initialize(dsn)
 	models.Migrate(db)
 
@@ -89,7 +90,9 @@ func main() {
 	api := e.Group("/api")
 	routes.SetupRoutes(api)
 	appPort := os.Getenv("APP_PORT")
-	e.Logger.Fatal(e.Start(appPort))
-}
+	if appPort == "" {
+		appPort = "1323"
+	}
 
-//test
+	e.Logger.Fatal(e.Start(":" + appPort))
+}

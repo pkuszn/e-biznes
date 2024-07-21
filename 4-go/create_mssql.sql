@@ -1,3 +1,9 @@
+CREATE DATABASE [tea-shop-db]
+GO
+
+USE [tea-shop-db]
+GO
+
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[status]') AND type in (N'U'))
 BEGIN
     CREATE TABLE status (

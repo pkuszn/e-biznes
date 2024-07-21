@@ -8,16 +8,8 @@ services:
       - "1323:1323"
     networks:
       - mynet
-    environment:
-      - GITHUB_CLIENT_ID=Ov23liRt5OqDOgVtR6YB
-      - GITHUB_CLIENT_SECRET=78c70c8eddce01969825b8698b3f0418b7e42d41
-      - REDIRECT_URL=https://tea-shop-web-app.azurewebsites.net/login
-      - SERVER=tea-shop-pk-server.database.windows.net
-      - USER=test
-      - PASSWORD=1H4Q3e0fx7tXrZj
-      - DATABASE=tea-shop-db
-      - PORT=1433
-      - APP_PORT=1323
+    env_file:
+      - .env
 
   react-app:
     build: .
@@ -31,16 +23,20 @@ services:
     networks:
       - mynet
 
-  db:
+  tea-shop-db:
     build:
       context: .
       dockerfile: Dockerfile.database
     image: europe-central2-docker.pkg.dev/gleaming-scene-429317-d6/ebiznes-registry/4-go-db-app
     ports:
         - 1433:1433
-
-volumes:
-  mysql-data:
+    networks:
+      - mynet
+    volumes:
+      - /home/pkuszneruk/university/e-biznes/4-go/entrypoint.sh:/usr/src/app/entrypoint.sh
+      - /home/pkuszneruk/university/e-biznes/4-go/run-initialization.sh:/usr/src/app/run-initialization.sh
+      - /home/pkuszneruk/university/e-biznes/4-go/create_mssql.sql:/usr/src/app/create_mssql.sql
+      - /home/pkuszneruk/university/e-biznes/4-go/init_mssql.sql:/usr/src/app/init_mssql.sql
 
 networks:
   mynet:

@@ -29,7 +29,7 @@ services:
   react-app:
     build: ../5-react/my-app
     ports:
-      - "3000:80" 
+      - "1324:80" 
     stdin_open: true
     tty: true
     depends_on:

@@ -3,10 +3,16 @@ FROM mcr.microsoft.com/mssql/server:2019-CU13-ubuntu-20.04
 WORKDIR /usr/src/app
 
 COPY . /usr/src/app
-             
-ENV SA_PASSWORD root
-ENV ACCEPT_EULA Y
-ENV MSSQL_PID Express
+
+ENV SA_PASSWORD="M!keting123"
+ENV ACCEPT_EULA="Y"
+ENV MSSQL_PID="Express"
+
+USER root
+RUN chmod +x /usr/src/app/*.sh && chown mssql /usr/src/app/*.sh
+RUN chmod +x /usr/src/app/*.sql && chown mssql /usr/src/app/*.sql
+
+USER mssql
 
 EXPOSE 1433
 
