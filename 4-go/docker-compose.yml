@@ -15,7 +15,7 @@ services:
     # build: ../5-react/my-app/Dockerfile
     image: europe-central2-docker.pkg.dev/gleaming-scene-429317-d6/ebiznes-registry/4-react-app
     ports:
-      - "1423:80" 
+      - "1423:1423" 
     stdin_open: true
     tty: true
     depends_on:
