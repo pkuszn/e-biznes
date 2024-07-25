@@ -65,6 +65,7 @@ Server app
 
 <b>Task no.10</b> <i>Chmura/CI</i>
 
+3.0 [c202b38f056df5280c81defd8065f1aba62c5e47](https://github.com/pkuszn/e-biznes/tree/c202b38f056df5280c81defd8065f1aba62c5e47)
 
 ## 
 
@@ -81,4 +82,4 @@ Server app
 | 7 | Sonar | :white_check_mark: |
 | 8 | OAuth2 | :white_check_mark: |
 | 9 | ChatGPT bot | :white_check_mark: |
-| 10 | Chmura/CI | :soon: |
+| 10 | Chmura/CI | :white_check_mark: |
